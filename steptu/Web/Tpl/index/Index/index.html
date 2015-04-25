@@ -4,103 +4,35 @@
 	<meta charset="utf-8">
 	    <link rel="stylesheet" href="../Public/css/index.css" media="all" type="text/css">
 	<title>游迹网</title>
-<script language="javascript" type="text/javascript">
-<!--//--><![CDATA[/><!--
-//图片滚动列表 mengjia 070816
-var Speed = 10; //速度(毫秒)
-var Space = 5; //每次移动(px)
-var PageWidth = 168; //翻页宽度
-var fill = 0; //整体移位
-var MoveLock = false;
-var MoveTimeObj;
-var Comp = 0;
-var AutoPlayObj = null;
-GetObj("List2").innerHTML = GetObj("List1").innerHTML;
-GetObj('ISL_Cont').scrollLeft = fill;
-GetObj("ISL_Cont").onmouseover = function(){clearInterval(AutoPlayObj);}
-GetObj("ISL_Cont").onmouseout = function(){AutoPlay();}
-AutoPlay();
-function GetObj(objName){if(document.getElementById){return eval('document.getElementById("'+objName+'")')}else{return eval('document.all.'+objName)}}
-function AutoPlay(){ //自动滚动
- clearInterval(AutoPlayObj);
- AutoPlayObj = setInterval('ISL_GoDown();ISL_StopDown();',3000); //间隔时间
-}
-function ISL_GoUp(){ //上翻开始
- if(MoveLock) return;
- clearInterval(AutoPlayObj);
- MoveLock = true;
- MoveTimeObj = setInterval('ISL_ScrUp();',Speed);
-}
-function ISL_StopUp(){ //上翻停止
- clearInterval(MoveTimeObj);
- if(GetObj('ISL_Cont').scrollLeft % PageWidth - fill != 0){
-  Comp = fill - (GetObj('ISL_Cont').scrollLeft % PageWidth);
-  CompScr();
- }else{
-  MoveLock = false;
- }
- AutoPlay();
-}
-function ISL_ScrUp(){ //上翻动作
- if(GetObj('ISL_Cont').scrollLeft <= 0){GetObj('ISL_Cont').scrollLeft = GetObj('ISL_Cont').scrollLeft + GetObj('List1').offsetWidth}
- GetObj('ISL_Cont').scrollLeft -= Space ;
-}
-function ISL_GoDown(){ //下翻
- clearInterval(MoveTimeObj);
- if(MoveLock) return;
- clearInterval(AutoPlayObj);
- MoveLock = true;
- ISL_ScrDown();
- MoveTimeObj = setInterval('ISL_ScrDown()',Speed);
-}
-function ISL_StopDown(){ //下翻停止
- clearInterval(MoveTimeObj);
- if(GetObj('ISL_Cont').scrollLeft % PageWidth - fill != 0 ){
-  Comp = PageWidth - GetObj('ISL_Cont').scrollLeft % PageWidth + fill;
-  CompScr();
- }else{
-  MoveLock = false;
- }
- AutoPlay();
-}
-function ISL_ScrDown(){ //下翻动作
- if(GetObj('ISL_Cont').scrollLeft >= GetObj('List1').scrollWidth){GetObj('ISL_Cont').scrollLeft = GetObj('ISL_Cont').scrollLeft - GetObj('List1').scrollWidth;}
- GetObj('ISL_Cont').scrollLeft += Space ;
-}
-function CompScr(){
- var num;
- if(Comp == 0){MoveLock = false;return;}
- if(Comp < 0){ //上翻
-  if(Comp < -Space){
-   Comp += Space;
-   num = Space;
-  }else{
-   num = -Comp;
-   Comp = 0;
-  }
-  GetObj('ISL_Cont').scrollLeft -= num;
-  setTimeout('CompScr()',Speed);
- }else{ //下翻
-  if(Comp > Space){
-   Comp -= Space;
-   num = Space;
-  }else{
-   num = Comp;
-   Comp = 0;
-  }
-  GetObj('ISL_Cont').scrollLeft += num;
-  setTimeout('CompScr()',Speed);
- }
-}
-//--><!]]>
+<script type="text/javascript" src="../Public/js/jquery-easyui-1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="../Public/js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../Public/js/jquery-easyui-1.4.2/themes/default/easyui.css">
+  <link rel="stylesheet" type="text/css" href="../Public/js/jquery-easyui-1.4.2/themes/icon.css">
+  <link rel="stylesheet" type="text/css" href="../Public/js/jquery-easyui-1.4.2/demo/demo.css">
+  <link rel="stylesheet" href="../Public/css/css.css" media="all">
+
+<script>
+jQuery(document).ready(function($) {
+  $('.theme-login').click(function(){
+    $('.theme-popover-mask').fadeIn(100);
+    $('.theme-popover').slideDown(200);
+  })
+  $('.theme-poptit .close').click(function(){
+    $('.theme-popover-mask').fadeOut(100);
+    $('.theme-popover').slideUp(200);
+  })
+
+})
 </script>
 </head>
 <body background="../Public/images/background.png">
 <div class="quanbu">
+
 	<div class="contentbg"></div>
 	<div class="content">
 		<img src="../Public/images/youhuitiao.png" class="youhuitiao">
-		<div style="position:absolute;top:30px;left:30px;">
+		
+    <div style="position:absolute;top:30px;left:30px;">
 <div class="rollBox">
      <div class="zuogun" onmousedown="ISL_GoUp()" onmouseup="ISL_StopUp()" onmouseout="ISL_StopUp()"><img src="../Public/images/zuogun.png"></div>
      <div class="Cont" id="ISL_Cont">
@@ -108,17 +40,17 @@ function CompScr(){
        <div id="List1">
         <!-- 图片列表 begin -->
          <div class="pic">
-          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><img src="/image/1.jpg" width="145" height="145" alt="一号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
-          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank">一号图片</a>
+          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><img src="../Public/images/youhui1.jpg" width="145" height="145" alt="一号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">桂林</div><div style="font-size:15px;font-family: SimHei;color:#ff8004;">2300起</div></a>
 
          </div>
  <div class="pic">
-          <a href="<#ZC_BLOG_HOST#>?cat=2" target="_blank"><img src="/image/1.jpg" width="145" height="145" alt="二号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=2" target="_blank"><img src="../Public/images/youhui2.jpg" width="145" height="145" alt="二号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
           <a href="<#ZC_BLOG_HOST#>?cat=2" target="_blank">二号图片</a>
 
          </div>
          <div class="pic">
-          <a href="<#ZC_BLOG_HOST#>?cat=3" target="_blank"><img src="/image/3.jpg" width="145" height="145" alt="三号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=3" target="_blank"><img src="../Public/images/youhui3.jpg" width="145" height="145" alt="三号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
           <a href="<#ZC_BLOG_HOST#>?cat=3" target="_blank">三号图片</a>
 
          </div>
@@ -150,6 +82,7 @@ function CompScr(){
      <div class="yougun" onmousedown="ISL_GoDown()" onmouseup="ISL_StopDown()" onmouseout="ISL_StopDown()">
      	<img src="../Public/images/yougun.png"></div>
     </div>
+   
 </div>
 
 	<img src="../Public/images/zhutiao.png" class="zhutiao">
@@ -158,6 +91,32 @@ function CompScr(){
 	<div class="lvyouzhicontent">
 		
 	</div>
+  <div class="zhuhaohuaform">
+  <form action="" name="zhuxianghaohua" method="post" >
+  <div style="position:absolute;left:0px;top:0px;font-size:15px;font-family: SimHei;">目的地</div><input name="destination" type="text" style="position:absolute;width:95px;left:70px;top:-3px;"/>
+  <div style="position:absolute;left:0px;top:40px;font-size:15px;font-family: SimHei;">入住时间</div><div style="position:absolute;width:90px;left:70px;top:37px;"><input name="intime" type="text"style="width:100px;" class="easyui-datebox" required="required" data-options="formatter:myformatter,parser:myparser"/></div>
+  <div style="position:absolute;left:0px;top:80px;font-size:15px;font-family: SimHei;">离店时间</div><div style="position:absolute;width:120px;left:70px;top:77px;"><input id="outtime" type="text" style="width:100px;" class="easyui-datebox" required="required" data-options="formatter:myformatter,parser:myparser"/></div>
+  <div style="position:absolute;left:0px;top:120px;font-size:15px;font-family: SimHei;">酒店品牌</div><select name="brand" style="position:absolute;width:90px;left:70px;top:117px;">
+  <option value="希尔顿">希尔顿</option>
+  <option value="洲际酒店">洲际酒店</option>
+</select>
+  
+  <div style="position:absolute;left:50px;top:180px;"><input type="image" src="../Public/images/search.png" ></div>
+  </form>
+  </div>
+  <img src="../Public/images/zhufenge.png" class="zhufenge">
+  <div class="zhuhaohuatu">
+
+<div id="demo" style="height:250px;width:280px; overflow:hidden; ">
+<div id="demo1">
+<a href="http://www.16sucai.com" target="_blank" ><div id="jiudiantu"><img src="../Public/images/xilaideng.png" border="0" /><div id="jiudianming"style="position:relative;left:190px;top:-80px;font-size:15px;font-family: SimHei;color:#046bb3;">喜来登酒店<div id="jiudianjiage" style="font-size:15px;font-family: SimHei;color:#ff8004;">2300</div></div></div></a>
+<a href="http://www.16sucai.com" target="_blank" ><div id="jiudiantu"><img src="../Public/images/xilaideng.png" border="0" /><div id="jiudianming"style="position:relative;left:190px;top:-80px;font-size:15px;font-family: SimHei;color:#046bb3;">喜来登酒店<div id="jiudianjiage" style="font-size:15px;font-family: SimHei;color:#ff8004;">2300</div></div></div></a>
+<a href="http://www.16sucai.com" target="_blank" ><div id="jiudiantu"><img src="../Public/images/xilaideng.png" border="0" /><div id="jiudianming"style="position:relative;left:190px;top:-80px;font-size:15px;font-family: SimHei;color:#046bb3;">喜来登酒店<div id="jiudianjiage" style="font-size:15px;font-family: SimHei;color:#ff8004;">2300</div></div></div></a>
+</div>
+<div id="demo2"></div>
+</div>
+
+  </div>
 </div>
 	    
 	
@@ -171,9 +130,12 @@ function CompScr(){
   <img src="../Public/images/xuanchuan.png"class="xuanchuan">
    <!-- <img src="../Public/images/logo.png"class="logo"> -->
    <img src="../Public/images/phone.png"class="phone">
-	<img src="../Public/images/login.png"class="login">
+	
 		<img src="../Public/images/register.png"class="register">
 
+
+<div ><a href="javascript:;"class=" btn-large theme-login"><img src="../Public/images/login.png"class="login"></a>
+</div>
 
 
 <div class="bottom">
@@ -183,6 +145,59 @@ function CompScr(){
 
 </div>
 
+<script src="../Public/js/index.js" type="text/javascript"></script>
+<script type="text/javascript">
+function myformatter(date){
+ var y = date.getFullYear();
+var m = date.getMonth()+1;
+var d = date.getDate();
+return y+'-'+(m<10?('0'+m):m)+'-'+(d<10?('0'+d):d);
+ }
+ function myparser(s){
+ if (!s) return new Date();
+ var ss = (s.split('-'));
+ var y = parseInt(ss[0],10);
+ var m = parseInt(ss[1],10);
+var d = parseInt(ss[2],10);
+ if (!isNaN(y) && !isNaN(m) && !isNaN(d)){
+return new Date(y,m-1,d);
+ }else{
+ return new Date();
+ }
+ }
 
+
+
+  var speed=200
+   demo2.innerHTML=demo1.innerHTML
+   function Marquee(){
+   if(demo2.offsetTop-demo.scrollTop<=0)
+   demo.scrollTop-=demo1.offsetHeight
+   else{
+   demo.scrollTop++
+   }
+   }
+   var MyMar=setInterval(Marquee,speed)
+   demo.onmouseover=function() {clearInterval(MyMar)}
+   demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+ </script>
+<div class="theme-popover">
+     <div class="theme-poptit">
+          <a href="javascript:;" title="关闭" class="close">×</a>
+          <h3>旅行是一种生活</h3>
+     </div>
+     <div class="theme-popbod dform">
+           <form class="theme-signin" name="loginform" action="" method="post">
+                <ol>
+                     <li><h4>请登录</h4></li>
+                     <li><strong>用户名：</strong><input class="ipt" type="text" name="log" value="jq22" size="20" /></li>
+                     <li><strong>密码：</strong><input class="ipt" type="password" name="pwd" value="***" size="20" /></li>
+                     <li><input class="btn btn-primary" type="submit" name="submit" value=" 登 录 " /></li>
+                </ol>
+           </form>
+     </div>
+</div>
+<div class="theme-popover-mask"></div>
+  
 </body>
 </html>
