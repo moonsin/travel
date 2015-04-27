@@ -30,11 +30,16 @@ jQuery(document).ready(function($) {
 
 	<div class="contentbg"></div>
 	<div class="content">
-		<img src="../Public/images/youhuitiao.png" class="youhuitiao">
+		<img src="../Public/images/youhuitiao.png" class="youhuitiao"> 
+<!--     <img src="../Public/images/youhuitiao1.png" class="youhuitiao1">
+    <img src="../Public/images/youhuitiao2.png" class="youhuitiao2">
+    <img src="../Public/images/youhuitiao3.png" class="youhuitiao3"> -->
 		
     <div style="position:absolute;top:30px;left:30px;">
 <div class="rollBox">
-     <div class="zuogun" onmousedown="ISL_GoUp()" onmouseup="ISL_StopUp()" onmouseout="ISL_StopUp()"><img src="../Public/images/zuogun.png"></div>
+     <div class="zuogun" onmousedown="ISL_GoUp()" onmouseup="ISL_StopUp1()" onmouseout="ISL_StopUp()" onmouseover="document.images['zuoguntu'].src='../Public/images/zuogun1.png'">
+      <img id="zuoguntu" src="../Public/images/zuogun.png">
+    </div>
      <div class="Cont" id="ISL_Cont">
       <div class="ScrCont">
        <div id="List1">
@@ -79,8 +84,8 @@ jQuery(document).ready(function($) {
        <div id="List2"></div>
       </div>
      </div>
-     <div class="yougun" onmousedown="ISL_GoDown()" onmouseup="ISL_StopDown()" onmouseout="ISL_StopDown()">
-     	<img src="../Public/images/yougun.png"></div>
+     <div class="yougun" onmousedown="ISL_GoDown()" onmouseup="ISL_StopDown1()" onmouseout="ISL_StopDown()" onmouseover="document.images['youguntu'].src='../Public/images/yougun1.png'" >
+     	<img id="youguntu" src="../Public/images/yougun.png"></div>
     </div>
    
 </div>
@@ -93,10 +98,10 @@ jQuery(document).ready(function($) {
 	</div>
   <div class="zhuhaohuaform">
   <form action="" name="zhuxianghaohua" method="post" >
-  <div style="position:absolute;left:0px;top:0px;font-size:15px;font-family: SimHei;">目的地</div><input name="destination" type="text" style="position:absolute;width:95px;left:70px;top:-3px;"/>
+  <div style="position:absolute;left:0px;top:0px;font-size:15px;font-family: SimHei;">目的地</div><input name="destination" type="text" style="position:absolute;width:95px;left:70px;top:-3px;border-radius:4px;"/>
   <div style="position:absolute;left:0px;top:40px;font-size:15px;font-family: SimHei;">入住时间</div><div style="position:absolute;width:90px;left:70px;top:37px;"><input name="intime" type="text"style="width:100px;" class="easyui-datebox" required="required" data-options="formatter:myformatter,parser:myparser"/></div>
   <div style="position:absolute;left:0px;top:80px;font-size:15px;font-family: SimHei;">离店时间</div><div style="position:absolute;width:120px;left:70px;top:77px;"><input id="outtime" type="text" style="width:100px;" class="easyui-datebox" required="required" data-options="formatter:myformatter,parser:myparser"/></div>
-  <div style="position:absolute;left:0px;top:120px;font-size:15px;font-family: SimHei;">酒店品牌</div><select name="brand" style="position:absolute;width:90px;left:70px;top:117px;">
+  <div style="position:absolute;left:0px;top:120px;font-size:15px;font-family: SimHei;">酒店品牌</div><select name="brand" style="position:absolute;width:100px;left:70px;top:117px;font-size:18px;">
   <option value="希尔顿">希尔顿</option>
   <option value="洲际酒店">洲际酒店</option>
 </select>
@@ -158,41 +163,6 @@ jQuery(document).ready(function($) {
 </div>
 
 <script src="../Public/js/index.js" type="text/javascript"></script>
-<script type="text/javascript">
-function myformatter(date){
- var y = date.getFullYear();
-var m = date.getMonth()+1;
-var d = date.getDate();
-return y+'-'+(m<10?('0'+m):m)+'-'+(d<10?('0'+d):d);
- }
- function myparser(s){
- if (!s) return new Date();
- var ss = (s.split('-'));
- var y = parseInt(ss[0],10);
- var m = parseInt(ss[1],10);
-var d = parseInt(ss[2],10);
- if (!isNaN(y) && !isNaN(m) && !isNaN(d)){
-return new Date(y,m-1,d);
- }else{
- return new Date();
- }
- }
-
-
-
-  var speed=200
-   demo2.innerHTML=demo1.innerHTML
-   function Marquee(){
-   if(demo2.offsetTop-demo.scrollTop<=0)
-   demo.scrollTop-=demo1.offsetHeight
-   else{
-   demo.scrollTop++
-   }
-   }
-   var MyMar=setInterval(Marquee,speed)
-   demo.onmouseover=function() {clearInterval(MyMar)}
-   demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
- </script>
 <div class="theme-popover">
      <div class="theme-poptit">
           <a href="javascript:;" title="关闭" class="close">×</a>
