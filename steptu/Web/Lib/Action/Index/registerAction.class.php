@@ -118,7 +118,7 @@ class registerAction extends Action{
                                     'email' =>  $_POST['email']);
 
                 $user ->add($array);
-                $data['code']=0;
+                $data['code']=1;
                 $data['msg']='成功';
                 $this->ajaxReturn($data,'JSON');
                 return;
