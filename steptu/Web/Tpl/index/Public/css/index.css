@@ -110,7 +110,9 @@ position: absolute;
    -moz-opacity:0.63; /*Firefox私有，透明度50%*/
    opacity:0.63;/*其他，透明度50%*/
 
+
 }
+
 .rollBox{width:704px;overflow:hidden;padding:12px 0 5px 6px;}
 .rollBox .LeftBotton{height:52px;width:19px;background:url(/img/job_mj_069.gif) no-repeat 11px 0;overflow:hidden;float:left;display:inline;margin:25px 0 0 0;cursor:pointer;}
 .rollBox .RightBotton{height:52px;width:20px;background:url(/img/job_mj_069.gif) no-repeat -8px 0;overflow:hidden;float:left;display:inline;margin:25px 0 0 0;cursor:pointer;}
@@ -185,4 +187,125 @@ position: absolute;
 
 
 }
+.bottomsm
+{
+	position: absolute;
+	left: 243px;
+	top: 773px;
+	height: 180px;
+	width: 70px;
+	/*background-color: red;*/
+	
 
+}
+
+.bottombiao
+{
+	font-size:14px;
+	font-family: Microsoft YaHei;
+	font-weight:bold;
+}
+.bottomxuanxiang
+{
+	position: absolute;
+	top:35px;
+   height: 130px;
+   width: 80px;
+   /*background-color: black;*/
+   font-size:12px;
+	font-family: Microsoft YaHei;
+	line-height:160%;
+
+}
+.bottomxuanxiang1
+{
+	position: absolute;
+	top:35px;
+   height: 130px;
+   width: 110px;
+   /*background-color: black;*/
+   font-size:12px;
+	font-family: Microsoft YaHei;
+	line-height:160%;
+
+}
+.bottompersonal
+{
+	position: absolute;
+	left: 343px;
+	top: 773px;
+	height: 180px;
+	width: 70px;
+/*	background-color: red;*/
+	
+
+}
+.bottombook
+{
+	position: absolute;
+	left: 443px;
+	top: 773px;
+	height: 180px;
+	width: 70px;
+	/*background-color: red;*/
+	
+
+}
+.weishenme
+{
+	position: absolute;
+	left: 543px;
+	top: 773px;
+	height: 180px;
+	width: 70px;
+/*	background-color: red;*/
+	
+
+}
+
+.bottomaboutus
+{
+	position: absolute;
+	left: 643px;
+	top: 773px;
+	height: 180px;
+	width: 70px;
+	/*background-color: red;*/
+	
+
+}
+.steptu
+{
+	position: absolute;
+	left: 780px;
+	top: 780px;
+	height: 50px;
+}
+.banquan
+{position: absolute;
+	left: 760px;
+	top: 835px;
+	height: 33px;
+
+}
+.renzhengwang
+{
+	position: absolute;
+	left: 720px;
+	top: 875px;
+	height: 33px;
+}
+.chengxin
+{
+	position: absolute;
+	left: 800px;
+	top: 875px;
+	height: 33px;
+}
+.kexin
+{
+	position: absolute;
+	left: 893px;
+	top: 875px;
+	height: 33px;
+}
