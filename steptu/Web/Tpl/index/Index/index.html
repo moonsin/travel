@@ -30,13 +30,12 @@ jQuery(document).ready(function($) {
 
 	<div class="contentbg"></div>
 	<div class="content">
-		<img src="../Public/images/youhuitiao.png" class="youhuitiao"> 
-<!--     <img src="../Public/images/youhuitiao1.png" class="youhuitiao1">
+		<!--优惠套餐条-->
+    <img src="../Public/images/youhuitiao1.png" class="youhuitiao1">
     <img src="../Public/images/youhuitiao2.png" class="youhuitiao2">
-    <img src="../Public/images/youhuitiao3.png" class="youhuitiao3"> -->
-		
+		<!--以下这一段是优惠套餐滚动实现-->
     <div style="position:absolute;top:30px;left:30px;">
-<div class="rollBox">
+  <div class="rollBox">
      <div class="zuogun" onmousedown="ISL_GoUp()" onmouseup="ISL_StopUp1()" onmouseout="ISL_StopUp()" onmouseover="document.images['zuoguntu'].src='../Public/images/zuogun1.png'">
       <img id="zuoguntu" src="../Public/images/zuogun.png">
     </div>
@@ -84,15 +83,18 @@ jQuery(document).ready(function($) {
        <div id="List2"></div>
       </div>
      </div>
-     <div class="yougun" onmousedown="ISL_GoDown()" onmouseup="ISL_StopDown1()" onmouseout="ISL_StopDown()" onmouseover="document.images['youguntu'].src='../Public/images/yougun1.png'" >
-     	<img id="youguntu" src="../Public/images/yougun.png"></div>
+     <div class="yougun" onmousedown="ISL_GoDown()" onmouseup="ISL_StopDown1()" onmouseout="ISL_StopDown()" onmouseover="document.images['youguntu'].src='/steptu/Web/Tpl/Index/Public/images/yougun1.png'" >
+     	<img id="youguntu" src="/steptu/Web/Tpl/Index/Public/images/yougun.png"></div>
     </div>
    
 </div>
+<!--以上这一段是优惠套餐滚动实现-->
 
 	<img src="../Public/images/zhutiao.png" class="zhutiao">
 	<div></div>
-	<img src="../Public/images/lvyouzhi.png" class="lvyouzhi">
+  <!--旅游志标题条-->
+	<img src="../Public/images/lvyouzhi1.png" class="lvyouzhi">
+  <img src="../Public/images/lvyouzhi2.png" class="lvyouzhi2">
 	<div class="lvyouzhicontent">
 		
 	</div>
