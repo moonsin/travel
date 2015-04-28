@@ -23,7 +23,7 @@ function ISL_GoUp(){ //上翻开始
  clearInterval(AutoPlayObj);
  MoveLock = true;
  MoveTimeObj = setInterval('ISL_ScrUp();',Speed);
-document.images['zuoguntu'].src='../Public/images/zuogun1.png'
+document.images['zuoguntu'].src='/steptu/Web/Tpl/Index/Public/images/zuogun1.png'
 }
 function ISL_StopUp(){ //上翻停止
  clearInterval(MoveTimeObj);
@@ -33,8 +33,9 @@ function ISL_StopUp(){ //上翻停止
  }else{
   MoveLock = false;
  }
+ document.images['zuoguntu'].src='/steptu/Web/Tpl/Index/Public/images/zuogun.png'
  AutoPlay();
- document.images['zuoguntu'].src='../Public/images/zuogun.png'
+ 
 }
 function ISL_StopUp1(){ //上翻停止
  clearInterval(MoveTimeObj);
@@ -44,8 +45,9 @@ function ISL_StopUp1(){ //上翻停止
  }else{
   MoveLock = false;
  }
+ document.images['zuoguntu'].src='/steptu/Web/Tpl/Index/Public/images/zuogun1.png'
  AutoPlay();
- document.images['zuoguntu'].src='../Public/images/zuogun1.png'
+ 
 }
 function ISL_ScrUp(){ //上翻动作
  if(GetObj('ISL_Cont').scrollLeft <= 0){GetObj('ISL_Cont').scrollLeft = GetObj('ISL_Cont').scrollLeft + GetObj('List1').offsetWidth}
@@ -58,7 +60,7 @@ function ISL_GoDown(){ //下翻
  MoveLock = true;
  ISL_ScrDown();
  MoveTimeObj = setInterval('ISL_ScrDown()',Speed);
- document.images['youguntu'].src='../Public/images/yougun1.png'
+ document.images['youguntu'].src='/steptu/Web/Tpl/Index/Public/images/yougun1.png'
 }
 function ISL_StopDown(){ //下翻停止
  clearInterval(MoveTimeObj);
@@ -68,8 +70,9 @@ function ISL_StopDown(){ //下翻停止
  }else{
   MoveLock = false;
  }
+ document.images['youguntu'].src='/steptu/Web/Tpl/Index/Public/images/yougun.png'
  AutoPlay();
- document.images['youguntu'].src='../Public/images/yougun.png'
+ 
 }
 function ISL_StopDown1(){ //下翻停止
  clearInterval(MoveTimeObj);
@@ -79,8 +82,9 @@ function ISL_StopDown1(){ //下翻停止
  }else{
   MoveLock = false;
  }
+ document.images['youguntu'].src='/steptu/Web/Tpl/Index/Public/images/yougun1.png'
  AutoPlay();
- document.images['youguntu'].src='../Public/images/yougun1.png'
+ 
 }
 
 function ISL_ScrDown(){ //下翻动作
