@@ -37,7 +37,22 @@ steptu首页接口设计说明书：
 		   code:1 msg:登录成功
 
 3.注册模块：
-pass
+  调用用 post 到 {:U('Index/register/register')} 
+
+        code:0 代表注册失败
+
+      code:0 err:0 msg:用户名为空
+      code:0 err:1 msg:密码为空
+      code:0 err:2 msg:确认密码为空
+      code:0 err:3 msg:电话为空
+      code:0 err:4 msg:邮箱为空
+      code:0 err:5 msg:两次密码不对
+      code:0 err:6 msg:密码太短，请重新设定
+      code:0 err:7 msg:电话号码不符合规范
+      code:0 err:8 msg:邮箱不符合规范
+      code:0 err:9 msg:用户名已存在
+      code:1 msg:成功
+
 
 4.搜索模块：
 
