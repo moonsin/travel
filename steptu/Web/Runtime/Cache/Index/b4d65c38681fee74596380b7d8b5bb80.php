@@ -48,7 +48,7 @@ jQuery(document).ready(function($) {
           <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">桂林</div><div style="font-size:15px;font-family: SimHei;color:#ff8004;">2300起</div></a>
 
          </div>
-        <div class="pic">
+ <div class="pic">
           <a href="<#ZC_BLOG_HOST#>?cat=2" target="_blank"><img src="../Public/images/youhui2.jpg" width="145" height="145" alt="二号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
           <a href="<#ZC_BLOG_HOST#>?cat=2" target="_blank">二号图片</a>
 
