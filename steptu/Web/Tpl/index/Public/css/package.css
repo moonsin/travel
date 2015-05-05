@@ -1,0 +1,290 @@
+.quanbu{
+ position: relative;
+    margin:0 auto;
+     width:1196px;
+    
+}
+.xuanchuan
+{
+	position: absolute;
+	left: 70px;
+	top: 45px;
+
+}
+.travelsm{
+	position: absolute;
+	left: 147px;
+	top: 229px;
+}
+.personal
+{
+	position: absolute;
+	left: 72px;
+	top: 175px;
+}
+.travelbook
+{
+	position: absolute;
+	left: -4px;
+	top: 229px;
+}
+.travel
+{
+	position: absolute;
+	left: 11px;
+	top: 310px;
+	
+}
+.makeplan
+{
+	position: absolute;
+	left: 137px;
+	top: 308px;
+}
+.index{
+	position: absolute;
+	left: 43px;
+	top: 225px;
+}
+.yuan{
+	position: absolute;
+	left: 21px;
+	top: 199px;
+	z-index: -1;
+	
+}
+.login{
+	position: absolute;
+	left: 822px;
+	top: 70px;
+}
+.register
+{
+	position: absolute;
+	left: 920px;
+	top: 70px;
+}
+.contentbg
+{
+position: absolute;
+	background-color: #FFFFFF;
+	width: 770px;
+	height: 3642px;
+	top: 225px;
+	left: 210px;
+	filter:alpha(opacity=63); /*IE滤镜，透明度50%*/
+   -moz-opacity:0.63; /*Firefox私有，透明度50%*/
+   opacity:0.63;/*其他，透明度50%*/
+}
+.content{
+	position: absolute;
+	background-color: #FFFFFF;
+	width: 750px;
+	height: 3622px;
+	top: 235px;
+	left: 220px;
+
+}
+.bottom
+{
+	position: absolute;
+	background-color: #FFFFFF;
+	width: 790px;
+	height: 180px;
+	top: 3900px;
+	left: 203px;
+	filter:alpha(opacity=63); /*IE滤镜，透明度50%*/
+   -moz-opacity:0.63; /*Firefox私有，透明度50%*/
+   opacity:0.63;/*其他，透明度50%*/
+
+
+}
+.bottomsm
+{
+	position: absolute;
+	left: 243px;
+	top: 3908px;
+	height: 180px;
+	width: 70px;
+	/*background-color: red;*/
+	
+
+}
+
+.bottombiao
+{
+	font-size:14px;
+	font-family: Microsoft YaHei;
+	font-weight:bold;
+}
+.bottomxuanxiang
+{
+	position: absolute;
+	top:35px;
+   height: 130px;
+   width: 80px;
+   /*background-color: black;*/
+   font-size:12px;
+	font-family: Microsoft YaHei;
+	line-height:160%;
+
+}
+.bottomxuanxiang1
+{
+	position: absolute;
+	top:35px;
+   height: 130px;
+   width: 110px;
+   /*background-color: black;*/
+   font-size:12px;
+	font-family: Microsoft YaHei;
+	line-height:160%;
+
+}
+.bottompersonal
+{
+	position: absolute;
+	left: 343px;
+	top: 3908px;
+	height: 180px;
+	width: 70px;
+/*	background-color: red;*/
+	
+
+}
+.bottombook
+{
+	position: absolute;
+	left: 443px;
+	top: 3908px;
+	height: 180px;
+	width: 70px;
+	/*background-color: red;*/
+	
+
+}
+.weishenme
+{
+	position: absolute;
+	left: 543px;
+	top: 3908px;
+	height: 180px;
+	width: 70px;
+/*	background-color: red;*/
+	
+
+}
+
+.bottomaboutus
+{
+	position: absolute;
+	left: 643px;
+	top: 3908px;
+	height: 180px;
+	width: 70px;
+	/*background-color: red;*/
+	
+
+}
+.steptu
+{
+	position: absolute;
+	left: 750px;
+	top: 3915px;
+	height: 80px;
+}
+.banquan
+{position: absolute;
+	left: 760px;
+	top: 3970px;
+	height: 33px;
+
+}
+.renzhengwang
+{
+	position: absolute;
+	left: 720px;
+	top: 4010px;
+	height: 33px;
+}
+.chengxin
+{
+	position: absolute;
+	left: 800px;
+	top: 4010px;
+	height: 33px;
+}
+.kexin
+{
+	position: absolute;
+	left: 893px;
+	top: 4010px;
+	height: 33px;
+}
+.youhuitiao1
+{
+	position: absolute;
+
+	
+	
+	top: 190px;
+	left: 210px;
+}
+.taocanbiaoti
+{
+   position: absolute;
+   /*background-color: red;*/
+   left: 5px;
+   top: 5px;
+   width: 500px;
+   height: 23px;
+   font-size: 20px;
+   font-family: serif;
+   
+}
+.yulantu
+{
+	position: absolute;
+	left: 5px;
+  top: 33px;
+ width: 412px;
+   height: 303px;
+  /* background-color: red;*/
+border: 1px solid #b5b5b5;
+}
+.jiagerili
+{
+	position: absolute;
+	width: 412px;
+	height: 334px;
+	left: -28px;
+	top: 311px;
+	/*background-color: red;*/
+	 -moz-transform:scale(0.8917,0.7917);  
+      -webkit-transform:scale(0.8917,0.7917);  
+      -o-transform:scale(0.8917,0.7917); 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

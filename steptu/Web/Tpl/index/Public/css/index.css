@@ -150,6 +150,12 @@ position: absolute;
 	left: 580px;
 	top: 10px;
 }
+.lvyouzhi2
+{
+	position: absolute;
+	left: 738px;
+	top: 10px;
+}
 .lvyouzhicontent
 {
 	position: absolute;
@@ -309,21 +315,16 @@ position: absolute;
 	top: 875px;
 	height: 33px;
 }
-/*.youhuitiao1
+.youhuitiao1
 {
   position: absolute;
-  left: 0px
-  top:20px;
+  left: 3px;
+  top:5px;
 }
 .youhuitiao2
 {
-	position: absolute;
-  left: 0px
-  top:20px;
+ position: absolute;
+  left:500px;
+  top:7px;
 }
-.youhuitiao3
-{
-	position: absolute;
-  left: 50px
-  top:0px;
-}*/
+
