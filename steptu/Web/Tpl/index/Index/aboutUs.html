@@ -3,50 +3,48 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../Public/css/index.css" media="all" type="text/css">
-    <title>注册</title>
+    <title>关于游迹</title>
     <!--<script src="../Public/js/jquery-easyui-1.4.2/jquery.min.js"></script>-->
     <script src="../Public/js/register.js"></script>
+    <script src="../Public/js/traveBook.js"></script>
     <link rel="stylesheet" type="text/css" href="../Public/js/jquery-easyui-1.4.2/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="../Public/js/jquery-easyui-1.4.2/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="../Public/js/jquery-easyui-1.4.2/demo/demo.css">
     <link rel="stylesheet" href="../Public/css/css.css" media="all">
-    <link href="../Public/css/register.css" rel="stylesheet" type="text/css">
+    <link href="../Public/css/aboutUs.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body onload="time();readerNumber();replayNumber();likeNumber()">
 <div class="quanbu">
     <div>
-        <img src="../Public/images/travelsm.png" class="travelsm">
-        <img src="../Public/images/personal.png"class="personal">
+        <img src="../Public/images/travelsm.png"  class="travelsm">
+        <img src="../Public/images/personal.png" class="personal">
         <img src="../Public/images/travel.png" class="travel" >
         <img src="../Public/images/makeplan.png" class="makeplan">
-        <img src="../Public/images/index.png"class="index">
-        <img src="../Public/images/yuan.png"class="yuan">
-        <img src="../Public/images/travelbook.png"class="travelbook">
-        <img src="../Public/images/xuanchuan.png"class="xuanchuan">
-        <img src="../Public/images/phone.png"class="phone">
-        <img src="../Public/images/register.png"class="register">
+        <img src="../Public/images/index.png" class="index">
+        <img src="../Public/images/yuan.png"  class="yuan">
+        <img src="../Public/images/travelbook.png" class="travelbook">
+        <img src="../Public/images/xuanchuan.png" class="xuanchuan">
+        <img src="../Public/images/phone.png" class="phone">
+        <img src="../Public/images/register.png" class="register">
     </div>
-    <div ><a href="javascript:;"class=" btn-large theme-login"><img src="../Public/images/login.png"class="login"></a>
+    <div ><a href="javascript:;" class=" btn-large theme-login"><img src="../Public/images/login.png"class="login"></a>
     </div>
 
+    <div class="mainbox"></div>
+
     <div class="container">
-        <img src="../Public/images/register/menberregister.png"><br>
-        <p style="font-size: 20px;color: darkgray">欢迎您注册游迹旅游网</p><br>
-        <div class="mainbox">
-            <img src="../Public/images/register/word_2.png">
-            <form class="infoBox">
-                校验码已发送至 <span>13012345678</span><br/><br/>
-                请在24小时内完成验证<br/><br/><br/><br>
-                <label><span>校验码：</span><input type="number"></label><br/>
-                <button class="btn btn-primary">  提  交   </button>
-            </form>
-            <div class="tipsBox">
-                <div class="tips">
-                    没有收到验证码？您可以<br/><br/>
-                    <button>重新获取</button><br/><br/>
-                    或<br/><br/>
-                    <a>修改手机号</a>
-                </div>
+        <img src="../Public/images/aboutUs/aboutUs.png"><br><br/>
+        <img src="../Public/images/aboutUs/title.png"><br/>
+        <div class="realContainer">
+            <img src="../Public/images/aboutUs/logo.png"><span>关于我们</span>
+            <div class="realAboutUs">
+                在使用百度搜索引擎（以下简称百度）前，请您务必仔细阅读并透彻理解本声明。<br/>
+                您可以选择不使用百度，但如果您使用百度，您<br/>
+                的使用行为将被视为对本声明全部内容的认可。<br/>
+                鉴于百度以非人工检索方式、根据您键入的关键字自动生成到第三方网页的链接，<br/>
+                除百度注明之服务条款外，其他一切因使用百度而可能遭致的意外、疏忽、侵权及其造成的<br/>
+                损失（包括因下载被搜索链接到的第三方网站内容而感染电脑病毒），百度对其概不负责，<br/>
+                亦不承担任何法律责任。任何通过使用百度而搜索链接到的<br/>
             </div>
         </div>
     </div>
@@ -59,12 +57,20 @@
         <div class="weishenme"><span class="bottombiao">主题旅游</span><div class="bottomxuanxiang">城市之间<br>学子游<br>年休假<br>美食游</div></div>
         <div class="bottomaboutus"><span class="bottombiao">关于游记</span><div class="bottomxuanxiang">关于我们<br>联系我们<br>一起合作<br>用户协议<br>诚聘英才</div></div>
     </div>
-
     <img src="../Public/images/steptu.png" class="steptu">
     <img src="../Public/images/banquan.png" class="banquan">
     <img src="../Public/images/renzhengwang.png" class="renzhengwang">
     <img src="../Public/images/kexin.png" class="kexin">
     <img src="../Public/images/chengxin.png" class="chengxin">
+    <div class="severalBtn">
+        <ul>
+            <li><a>关于我们</a></li>
+            <li><a>联系我们</a></li>
+            <li><a>一起合作</a></li>
+            <li><a>用户协议</a></li>
+            <li><a>诚聘英才</a></li>
+        </ul>
+    </div>
 </div>
 
 <div class="theme-popover">
