@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../Public/css/css.css" media="all">
     <link href="../Public/css/letter.css" rel="stylesheet" type="text/css">
 </head>
-<body onload="time();readerNumber();replayNumber();likeNumber()">
+<body>
 <div class="quanbu">
     <div>
         <img src="../Public/images/travelsm.png"  class="travelsm">
@@ -46,11 +46,9 @@
                         <div class="information">
                             <img src="../Public/images/travelBook/headimg.png" class="imgeye">
                             <div class="titlebox">
-                                <a href=""><p style="color: #0055FF"><b>【一路向西，走进伊利】伊犁花的海洋</b></p></a><br/>
-                                <a href="">几米不会错</a> &nbsp;&nbsp;&nbsp;&nbsp;<span id="dataBox"></span>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <img src="../Public/images/travelBook/eye.png" style="height: 13px;">&nbsp;<span id="readerNumber"></span>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <img src="../Public/images/travelBook/message.png" style="height: 13px">&nbsp;<span id="replayNumber"></span>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <img src="../Public/images/travelBook/like.png" style="height: 13px;">&nbsp;<span id="likeNumber"></span>
+                                <a href=""><p style="color: #0055FF"><b>{$data.theme}</b></p></a><br/>
+                                <a href=""></a> &nbsp;&nbsp;&nbsp;&nbsp;<span id="dataBox">{$data.name}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                              
                             </div>
                         </div>
                         <div class="passage">
@@ -61,27 +59,7 @@
             </div>
             <div class="letterDetials">
                 <div class="realLetter">
-                    离开株洲那片净土，已经有一个月又一天零十小时了。毕业之后，开始工作，学会成长，面对形形色色的人。我把头发挽起来，自以为很淡定的，面带笑容的看着周围的一切。上班，下班，吃饭，喝水，这就是我的生活，我毕业之后全部的生活。
-
-                    我不是一只小鸟，可我却贪恋天空的美丽，其实，我只是爱自由。
-
-                    上海，这座城市很大很大，大到让我分不清东南西北。 我不是一只小鸟，可我却贪恋天空的美丽，其实，我只是爱自由。
-
-                    上海，这座城市很大很大，大到让我分不清东南西北。 我不是一只小鸟，可我却贪恋天空的美丽，其实，我只是爱自由。
-
-                    上海，这座城市很大很大，大到让我分不清东南西北。
-                    我不是一只小鸟，可我却贪恋天空的美丽，其实，我只是爱自由。
-
-                    上海，这座城市很大很大，大到让我分不清东南西北。
-                    <img src="../Public/images/travelBook/tourism.jpg">
-                    我不是一只小鸟，可我却贪恋天空的美丽，其实，我只是爱自由。
-
-                    上海，这座城市很大很大，大到让我分不清东南西北。 我不是一只小鸟，可我却贪恋天空的美丽，其实，我只是爱自由。
-
-                    上海，这座城市很大很大，大到让我分不清东南西北。 我不是一只小鸟，可我却贪恋天空的美丽，其实，我只是爱自由。
-
-                    上海，这座城市很大很大，大到让我分不清东南西北。
-                    我不是一只小鸟，可我却贪恋天空的美丽，其实
+                   {$note.content}
                 </div>
             </div>
         </div>
@@ -100,8 +78,8 @@
     <img src="../Public/images/kexin.png" class="kexin">
     <img src="../Public/images/chengxin.png" class="chengxin">
     <div class="twoBtn">
-        <a style="top: 242px;left: 37%" href="travelBook.html"> 旅 游 随 感 </a>
-        <a style="top: 242px;left: 54%" href="travelBook_2.html">写 给 未 来 的 信</a>
+        <a style="top: 242px;left: 37%" href="{:U('Index/travelBook/index')}"> 旅 游 随 感 </a>
+        <a style="top: 242px;left: 54%" href="{:U('Index/travelBook/index')}">写 给 未 来 的 信</a>
     </div>
 </div>
 

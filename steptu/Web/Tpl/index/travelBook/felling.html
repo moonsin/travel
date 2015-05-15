@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../Public/css/index.css" media="all" type="text/css">
     <title>旅游随感</title>
-    <!--<script src="../Public/js/jquery-easyui-1.4.2/jquery.min.js"></script>-->
+    <script src="../Public/js/jquery-easyui-1.4.2/jquery.min.js"></script>
     <script src="../Public/js/register.js"></script>
     <script src="../Public/js/traveBook.js"></script>
     <link rel="stylesheet" type="text/css" href="../Public/js/jquery-easyui-1.4.2/themes/default/easyui.css">
@@ -12,8 +12,37 @@
     <link rel="stylesheet" type="text/css" href="../Public/js/jquery-easyui-1.4.2/demo/demo.css">
     <link rel="stylesheet" href="../Public/css/css.css" media="all">
     <link href="../Public/css/travelFelling.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+        $(document).ready(function(){
+        　　$("#like").click(function(){
+        　　　　$.post('{:U("Index/travelBook/upadateLikeNumber")}',{id:<?php echo $data['id']?>},function(data) {
+                $('#likeNumber').html(data);
+                });
+        　　});
+
+            $('#sub').click(function() {
+                
+                if ($('#text').val()) {
+                    $.post(
+                        '{:U("Index/travelBook/fellingComment")}',
+                        {id:<?php echo $data['id']?>,content:$('#text').val()},
+                        function(data){
+                            if (data['msg'] == 'sussess') {
+                                window.location.href="{:U('Index/travelBook/felling','','')}/id/{$data.id}";
+                            }else{
+                                alert(data['msg'])
+                            }
+                         
+                    });
+                }else{
+                     alert("请填写评论类容");
+                }
+               
+            });
+        }); 
+    </script>
 </head>
-<body onload="time();readerNumber();replayNumber();likeNumber()">
+<body>
 <div class="quanbu">
     <div>
         <img src="../Public/images/travelsm.png"  class="travelsm">
@@ -45,11 +74,11 @@
                         <div class="information">
                             <img src="../Public/images/travelBook/headimg.png" class="imgeye">
                             <div class="titlebox">
-                                <a href=""><p style="color: #0055FF"><b>【一路向西，走进伊利】伊犁花的海洋</b></p></a><br/>
-                                <a href="">几米不会错</a> &nbsp;&nbsp;&nbsp;&nbsp;<span id="dataBox"></span>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <img src="../Public/images/travelBook/eye.png" style="height: 13px;">&nbsp;<span id="readerNumber"></span>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <img src="../Public/images/travelBook/message.png" style="height: 13px">&nbsp;<span id="replayNumber"></span>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <img src="../Public/images/travelBook/like.png" style="height: 13px;">&nbsp;<span id="likeNumber"></span>
+                                <a href=""><p style="color: #0055FF"><b>{$data.name}</b></p></a><br/>
+                                <a href="">{$data.userName}</a> &nbsp;&nbsp;&nbsp;&nbsp;<span id="dataBox"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <img src="../Public/images/travelBook/eye.png"  style="height: 13px;">&nbsp;<span id="readerNumber" >{$data.readNumber}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <img src="../Public/images/travelBook/message.png" style="height: 13px">&nbsp;<span id="replayNumber">{$count}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <img src="../Public/images/travelBook/like.png" id='like' style="height: 13px;">&nbsp;<span id="likeNumber" >{$data.likeNumber}</span>
                             </div>
                         </div>
                         <div class="passage">
@@ -60,67 +89,30 @@
             </div>
             <div class="detialContents">
                 <div class="realDetials">
-                    <img src="../Public/images/travelBook/tourism.jpg">
-                        离开株洲那片净土，已经有一个月又一天零十小时了。毕业之后，开始工作，学会成长，面对形形色色的人。我把头发挽起来，自以为很淡定的，面带笑容的看着周围的一切。上班，下班，吃饭，喝水，这就是我的生活，我毕业之后全部的生活。
-
-                        我不是一只小鸟，可我却贪恋天空的美丽，其实，我只是爱自由。
-
-                        上海，这座城市很大很大，大到让我分不清东南西北。在这里，有太多太多我走过的街巷，以及我没有到过的弄堂。一大早起床，上网看地图，捏着一份地铁路线图，我出发了，开始了一个人的旅行。
-
-                        我的旅行目的，是寻找南京西路上的一条古老的小吃街。一年前，我和姐姐在那里有过很多回忆。一年后的如今，这座城市里只有我，没有她。有些孤单，有些乏味，我只能在这座城市里，寻找回忆的轨迹，慰藉自己那颗空白的心。
-
-                        2010年7月24日，离开小窝，一个人旅行。
-                    我的旅行目的，是寻找南京西路上的一条古老的小吃街。一年前，我和姐姐在那里有过很多回忆。一年后的如今，这座城市里只有我，没有她。有些孤单，有些乏味，我只能在这座城市里，寻找回忆的轨迹，慰藉自己那颗空白的心。
-
-                    2010年7月24日，离开小窝，一个人旅行。
-                    离开株洲那片净土，已经有一个月又一天零十小时了
-                    我的旅行目的，是寻找南京西路上的一条古老的小吃街。一年前，我和姐姐在那里有过很多回忆。一年后的如今，这座城市里只有我，没有她。有些孤单，有些乏味，我只能在这座城市里，寻找回忆的轨迹，慰藉自己那颗空白的心。
-
-                    2010年7月24日，离开小窝，一个人旅行。
-                    我的旅行目的，是寻找南京西路上的一条古老的小吃街。一年前，我和姐姐在那里有过很多回忆。一年后的如今，这座城市里只有我，没有她。有些孤单，有些乏味，我只能在这座城市里，寻找回忆的轨迹，慰藉自己那颗空白的心。
-
-                    2010年7月24日，离开小窝，一个人旅行。
-                    离开株洲那片净土，已经有一个月又一天零
-                    我的旅行目的，是寻找南京西路上的一条古老的小吃街。一年前，我和姐姐在那里有过很多回忆。一年后的如今，这座城市里只有我，没有她。有些孤单，有些乏味，我只能在这座城市里，寻找回忆的轨迹，慰藉自己那颗空白的心。
-
-                    2010年7月24日，离开小窝，一个人旅行。
-                    离开株洲那片净土，已经有一个月又一天零十小时了
-                    离开株洲那片净土，已经有一个月又一天零十小时了。毕业之后，开始工作，学会成长，面对形形色色的人。我把头发挽起来，自以为很淡定的，面带笑容的看着周围的一切。上班，下班，吃饭，喝水，这就是我的生活，我毕业之后全部的生活。
+                    {$note.note} 
+                    <!-- 内容 -->
                 <br>
                 </div>
             </div>
             <span><b>发表评论</b></span><br/>
             <img src="../Public/images/travelBook/headimg.png" class="imgeye">
-            <textarea></textarea>
-            <button class="btn btn-primary" style="margin-left: 50px">  提 交  </button><br/><br/>
+            <textarea id='text'></textarea>
+            <button class="btn btn-primary" style="margin-left: 50px" id='sub'>  提 交  </button><br/><br/>
             <span><b>网友评论</b></span><br/>
-            <div class="comments">
-                <img src="../Public/images/travelBook/headimg.png" class="imgeye">
-                <span style="color: #0055FF"><b>几米不会错</b> </span><br><br/>
-                <span id="dataBox_2">2015-1-1</span><br/><br/>
-                <div class="commentContent">
-                    <p>好赞好赞 2010年7月24日，离开小窝，一个人旅行。
-                        已经有一个月又一天零十小时了 2010年7月24日，离开小窝，一个人旅行。
-                        离开株洲那片净土，已经有一个月又一天零十小时了</p><br/>
+            <foreach name='list' item='v'>
+                <div class="comments">
+                    <img src="../Public/images/travelBook/headimg.png" class="imgeye">
+                    <span style="color: #0055FF"><b>{$v.name}</b> </span><br><br/>
+                    <span id="dataBox_2">{$v.time}</span><br/><br/>
+                    <div class="commentContent">
+                        <p>
+                            {$v.content}
+                        </p><br/>
+                    </div>
                 </div>
-            </div>
-            <div class="comments">
-                <img src="../Public/images/travelBook/headimg.png" class="imgeye">
-                <span style="color: #0055FF"><b>几米不会错</b> </span><br><br/>
-                <span id="dataBox_2">2015-1-1</span><br/><br/>
-                <div class="commentContent">
-                    <p>好赞好赞 2010年7月24日，离开小窝，一个人旅行。
-                        离开株洲那片净土，已经有一个月又一天零十小时了 2010年7月24日，离开小窝，一个人旅行。
-                        离开株洲那片净土，已经有一个月又一天零十小时了 2010年7月24日，离开小窝，一个人旅行。
-                        离开株洲那片净土，已经有一个月又一天零十小时了 2010年7月24日，离开小窝，一个人旅行。
-                        离开株洲那片净土，已经有一个月又一天零十小时了离开株洲那片净土，已经有一个月又一天零十小时了 2010年7月24日，离开小窝，一个人旅行。
-                        离开株洲那片净土，已经有一个月又一天零十小时了 2010年7月24日，离开小窝，一个人旅行。
-                        离开株洲那片净土，已经</p><br/>
-                </div>
-            </div>
+            </foreach>
             <div class="btnbox" style="margin-top: 10px">
-                <button class="btn btn-primary">上一页</button>
-                <button class="btn btn-primary">下一页</button>
+                {$page}
             </div>
         </div>
     </div>
@@ -138,8 +130,8 @@
     <img src="../Public/images/kexin.png" class="kexin_1">
     <img src="../Public/images/chengxin.png" class="chengxin_1">
     <div class="twoBtn">
-        <a style="top: 242px;left: 37%" href="travelBook.html"> 旅 游 随 感 </a>
-        <a style="top: 242px;left: 54%" href="travelBook_2.html">写 给 未 来 的 信</a>
+        <a style="top: 242px;left: 37%" href="{:U('Index/travelBook/index')}"> 旅 游 随 感 </a>
+        <a style="top: 242px;left: 54%" href="{:U('Index/travelBook/letterList')}">写 给 未 来 的 信</a>
     </div>
 </div>
 
