@@ -34,32 +34,31 @@
 	<div class="container">
 		<img src="../Public/images/travelBook/headtitle.png"><br><br/>
 		<img src="../Public/images/travelBook/title.png"><br/>
-		<div id="mainboxrealFelling" style="display: block">
+		<div id="mainboxrealLetter" style="display: block">
 			<img src="../Public/images/travelBook/hot.png" style="padding-left: 1%;height: 30px"><img src="../Public/images/travelBook/newest.png" style="padding-left: 1%;height: 30px">
-			<foreach name='list' item='v'>
-				<div class="contentsFromUser">
-					<div class="realContents">
-						<div class="image">
-							<img src="../Public/images/travelBook/upload.png" style="float: left">
-						</div>
-						<div class="textword" >
-							<div class="information">
-								<img src="../Public/images/travelBook/headimg.png" class="imgeye">
-								<div class="titlebox">
-									<a href="{:U('felling','','')}/id/{$v.id}"><p style="color: #0055FF"><b>{$v.name}</b></p></a><br/>
-									<a href="">{$v.userName}</a> &nbsp;&nbsp;&nbsp;&nbsp;<span id="dataBox">{$v.time}</span>&nbsp;&nbsp;&nbsp;&nbsp;
-									<img src="../Public/images/travelBook/eye.png" style="height: 13px;">&nbsp;<span id="readerNumber">{$v.readNumber}</span>&nbsp;&nbsp;&nbsp;&nbsp;
-									<img src="../Public/images/travelBook/message.png" style="height: 13px">&nbsp;<span id="replayNumber"></span>&nbsp;&nbsp;&nbsp;&nbsp;
-									<img src="../Public/images/travelBook/like.png" id="likeaa" style="height: 13px;">&nbsp;<span id="likeNumber">{$v.likeNumber}</span>
+			<div class="letterContents">
+				<foreach name='listLetters' item='s'>
+					<div class="letterRealContents"><!--从这里开始循环 -->
+						<div class="realContents">
+							<div class="textword" >
+								<div class="information" style="margin-top: 5px">
+									<img src="../Public/images/travelBook/headimg.png" class="imgeye" style="float: left">
+									<div class="titlebox">
+										<p><a href="{:U('letter','','')}/id/{$s.id}"><b>{$s.theme}</b></a></p><br/>
+										{$s.name} &nbsp;&nbsp;&nbsp;&nbsp;<span id="dataBoxLetter" style="float: right"></span>
+									</div>
 								</div>
-							</div>
-							<div class="passage">
+								<div class="passage">
+									<!--<p>Welcome to SYSLAB! We do hands-on systems research on topics ranging from wireless ad-hoc networks to cloud computing to computer security. Principal ...Welcome to SYSLAB! We do hands-on systems research on topics ranging from wireless ad-hoc networks to cloud computing to computer security. Principal ...Welcome to SYSLAB! We do hands-on systems research on topics ranging from wireless ad-hoc networks to cloud computing to computer security. Principal ...</p>-->
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</foreach>
-			<div id="btnbox">{$page}	</div>
+				</foreach>	
+			<div class="btnbox" style="margin-top: 10px">
+				{$pageLetters}
+			</div>
+			</div>
 		</div>
 		</div>
 	<div>
@@ -79,7 +78,7 @@
 		 <a style="top: 242px;left: 37%" href="{:U('Index/travelBook/index')}"> 旅 游 随 感 </a>
         <a style="top: 242px;left: 54%" href="{:U('Index/travelBook/letterList')}">写 给 未 来 的 信</a>
 	</div>
-</div>s
+</div>
 
 <div class="theme-popover">
 	<div class="theme-poptit">
