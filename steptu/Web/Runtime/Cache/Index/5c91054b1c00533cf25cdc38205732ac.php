@@ -107,7 +107,7 @@ position:relative;top:15px;left:20px;">发起活动</span></div>
 <img src="../Public/images/makeplan/mptiao.png" class="mptiao">
 <div class="sousuotiao">
 <div style="font-size:18px; color:white;position:relative; top:5px; left:5px; float:left;"> 活动搜索</div>
-<form action="<?php echo U('Index/makePlan/searchPlan');?>" name="huodongsousuo" method="post">
+<form action="<?php echo U('Index/makePlan/makePlan');?>" name="huodongsousuo" method="post">
      <div style="position:absolute;top:48px;left:85px;font-size:14px; color:white;" > 始发地</div>
      <input name="shifadi" id="shifadi" type="text" value="" style="position:absolute;top:48px;left:135px;width:100px;font-size:14px;border-radius:4px;"/>
      <div style="position:absolute;top:48px;left:245px;font-size:14px; color:white;" > 目的地</div>

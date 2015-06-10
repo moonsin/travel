@@ -8,6 +8,7 @@ class indexAction extends Action{
 	public function index(){
 
 		$this->assign('note',$this->travelNote());
+		$this->assign('season',$this->discountSeason());
 		$this->display();
 	}
 
@@ -25,7 +26,8 @@ class indexAction extends Action{
 
 	//优惠季
 	public function discountSeason(){
-
+		$season= M('travelscency')->where(array('ifdiscount'=>1))->order("id DESC")->select();
+		return $season;
 	}
 
 	//搜索旁边的酒店信息

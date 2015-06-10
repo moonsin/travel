@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta charset="utf-8">
@@ -74,7 +74,7 @@ background-color: #d2dffe;
 	<img src="../Public/images/travelstore/smtiao.png" style="">
 	<div class="content1">
      <div class="sousuotiao">
-     	<form action="{:U('Index/travelStore/travelStore')}" name="smhuodongsousuo" method="post">
+     	<form action="<?php echo U('Index/travelStore/travelStore');?>" name="smhuodongsousuo" method="post">
      		<div style="position:absolute;top:9px;left:3px;font-size:12px; color:white;" > 始发地</div>
      		<input name="smshifadi" id="smshifadi" type="text" value="" style="position:absolute;top:7px;left:44px;width:70px;font-size:13px;border-radius:4px;"/>
      		<div style="position:absolute;top:9px;left:120px;font-size:12px; color:white;" > 目的地</div>
@@ -101,22 +101,22 @@ background-color: #d2dffe;
         <!-- 图片列表 begin -->
          <div class="pic">
           <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><img src="../Public/images/travelstore/youhui.png" width="157" height="95" alt="一号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
-          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">{$store[0].name}</div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;">{$store[0].description}</div><div style="font-size:18px;font-family: SimHei;color:red;float:left;">￥{$store[0].price}</div></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;"><?php echo ($store[0]["name"]); ?></div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;"><?php echo ($store[0]["description"]); ?></div><div style="font-size:18px;font-family: SimHei;color:red;float:left;">￥<?php echo ($store[0]["price"]); ?></div></a>
 
          </div>
  <div class="pic">
           <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><img src="../Public/images/travelstore/youhui.png" width="157" height="95" alt="一号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
-          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">{$store[1].name}</div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;">{$store[1].description}</div><div style="font-size:18px;font-family: SimHei;color:red;;float:left;">￥{$store[1].price}</div></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;"><?php echo ($store[1]["name"]); ?></div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;"><?php echo ($store[1]["description"]); ?></div><div style="font-size:18px;font-family: SimHei;color:red;;float:left;">￥<?php echo ($store[1]["price"]); ?></div></a>
 
          </div>
          <div class="pic">
           <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><img src="../Public/images/travelstore/youhui.png" width="157" height="95" alt="一号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
-          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">{$store[2].name}</div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;">{$store[2].description}</div><div style="font-size:18px;font-family: SimHei;color:red;;float:left;">￥{$store[2].price}</div></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;"><?php echo ($store[2]["name"]); ?></div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;"><?php echo ($store[2]["description"]); ?></div><div style="font-size:18px;font-family: SimHei;color:red;;float:left;">￥<?php echo ($store[2]["price"]); ?></div></a>
 
          </div>
          <div class="pic">
           <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><img src="../Public/images/travelstore/youhui.png" width="157" height="95" alt="一号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
-          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">{$store[3].name}</div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;">{$store[3].description}</div><div style="font-size:18px;font-family: SimHei;color:red;;float:left;">￥{$store[3].price}</div></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;"><?php echo ($store[3]["name"]); ?></div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;"><?php echo ($store[3]["description"]); ?></div><div style="font-size:18px;font-family: SimHei;color:red;;float:left;">￥<?php echo ($store[3]["price"]); ?></div></a>
 
          </div>
          <div class="pic">
