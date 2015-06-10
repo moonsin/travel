@@ -30,6 +30,7 @@ $(document).ready(function() {
 	$(".lou").click(function(){
 		$.post("{:U('Index/makePlan/searchPlan')}",{id:$(this).attr('id')},function(date){
 			// alert($("#biaohuodongshijian").html());
+      $("#biaohuodongmingcheng").html(date["theme"]);
 			$("#biaohuodongshijian").html(date["startTime"]);
 			$("#biaofabushijian").html(date["publishtime"]);
 			$("#biaohuodongshifadi").html(date["startarea"]);
@@ -132,7 +133,7 @@ position:relative;top:15px;left:20px;">发起活动</span></div>
   <foreach name='content' item='v'>
   	<div class="lou" id="{$v.id}">
        <img src="../Public/images/makeplan/loubiao.png" style="float:left;">
-       <div id="louhuodongmingcheng" class="louhuodongmingcheng" style="height:26px;">成都一日游</div>
+       <div id="louhuodongmingcheng" class="louhuodongmingcheng" style="height:26px;">{$v.theme}</div>
           <div style="position: absolute;font-size:13px;float:left;">活动时间:</div>
              <div id="louhuodongshijian" class="louhuodongshijian">{$v.startTime}</div>
                 <div style="position:absolute;left:150px;font-size:13px;float:left;">发布时间:</div>
@@ -155,40 +156,40 @@ position:relative;top:15px;left:20px;">发起活动</span></div>
    <a href=""><img src="../Public/images/makeplan/xiaye.png" style="position:absolute;top:680px;left:210px;cursor: pointer;"></a>
 </div>
 
-<div id="biaohuodongmingcheng" class="biaohuodongmingcheng">成都一日游</div>
+<div id="biaohuodongmingcheng" class="biaohuodongmingcheng">{$content[0]['theme']}</div>
     <div class="biao">
     	
        <div id="startTime" style="position:relative;font-size:14px;top:16px;left:25px;float:left">活动时间:</div>
-        <div id="biaohuodongshijian"style="position:relative;font-size:14px;top:16px;left:25px"></div>
+        <div id="biaohuodongshijian"style="position:relative;font-size:14px;top:16px;left:25px">{$content[0]['startTime']}</div>
           <div style="height:7px"><img src="../Public/images/makeplan/biaofenge.png" style="position:relative;top:16px;"></div> 
             <div style="position:relative;font-size:14px;top:16px;left:25px;float:left">发布时间:</div>
-         <div id="biaofabushijian"style="position:relative;font-size:14px;top:16px;left:25px"></div>
+         <div id="biaofabushijian"style="position:relative;font-size:14px;top:16px;left:25px">{$content[0]['publishtime']}</div>
           <div style="height:7px"><img src="../Public/images/makeplan/biaofenge.png" style="position:relative;top:16px;"></div> 
             <div style="position:relative;font-size:14px;top:16px;left:25px;float:left">活动始发地:</div>
-         <div id="biaohuodongshifadi"style="position:relative;font-size:14px;top:16px;left:25px"></div>
+         <div id="biaohuodongshifadi"style="position:relative;font-size:14px;top:16px;left:25px">{$content[0]['startTime']}</div>
           <div style="height:7px"><img src="../Public/images/makeplan/biaofenge.png" style="position:relative;top:16px;"></div> 
             <div style="position:relative;font-size:14px;top:16px;left:25px;float:left">活动目的地:</div>
-         <div id="biaohuodongmudidi"style="position:relative;font-size:14px;top:16px;left:25px"></div>
+         <div id="biaohuodongmudidi"style="position:relative;font-size:14px;top:16px;left:25px">{$content[0]['intentarea']}</div>
           <div style="height:7px"><img src="../Public/images/makeplan/biaofenge.png" style="position:relative;top:16px;"></div> 
             <div style="position:relative;font-size:14px;top:16px;left:25px;float:left">最大参与人数:</div>
-         <div id="biaozuidacanyurenshu"style="position:relative;font-size:14px;top:16px;left:25px"></div>
+         <div id="biaozuidacanyurenshu"style="position:relative;font-size:14px;top:16px;left:25px">{$content[0]['maxnumber']}</div>
           <div style="height:7px"><img src="../Public/images/makeplan/biaofenge.png" style="position:relative;top:16px;"></div> 
           <div style="position:relative;font-size:14px;top:16px;left:25px;float:left">报名人数:</div>
-         <div id="biaobaomingrenshu"style="position:relative;font-size:14px;top:16px;left:25px"></div>
+         <div id="biaobaomingrenshu"style="position:relative;font-size:14px;top:16px;left:25px">{$content[0]['number']}</div>
           <div style="height:7px"><img src="../Public/images/makeplan/biaofenge.png" style="position:relative;top:16px;"></div> 
           <div style="position:relative;font-size:14px;top:16px;left:25px;float:left">活动状态:</div>
-         <div id="biaohuodongzhuangtai"style="position:relative;font-size:14px;top:16px;left:25px"></div>
+         <div id="biaohuodongzhuangtai"style="position:relative;font-size:14px;top:16px;left:25px">{$content[0]['remark']}</div>
           <div style="height:7px"><img src="../Public/images/makeplan/biaofenge.png" style="position:relative;top:16px;"></div> 
            <div style="position:relative;font-size:14px;top:16px;left:25px;float:left">发起人:</div>
-         <div id="biaofaqiren"style="position:relative;font-size:14px;top:16px;left:25px"></div>
+         <div id="biaofaqiren"style="position:relative;font-size:14px;top:16px;left:25px">{$content[0]['initiator']}</div>
           <div style="height:7px"><img src="../Public/images/makeplan/biaofenge.png" style="position:relative;top:16px;"></div> 
           <div style="position:relative;font-size:14px;top:16px;left:25px;float:left">活动内容:</div>
-         <div id="biaohuodongneirong"style="position:relative;font-size:14px;top:16px;left:25px;width:280px;"></div>
+         <div id="biaohuodongneirong"style="position:relative;font-size:14px;top:16px;left:25px;width:280px;">{$content[0]['content']}</div>
           <div style="height:7px"><img src="../Public/images/makeplan/biaofenge.png" style="position:relative;top:16px;"></div> 
           <div style="position:relative;font-size:13px;top:21px;left:25px;float:left;color:#0032d3" >发起人信息</div>
           <div style="position:relative;font-size:13px;top:21px;left:45px;float:left;color:#0032d3" >已阅读并同意相关法律条约</div>
           <img src="../Public/images/makeplan/baoming.png" style="position:relative;left:80px;width:80px;top:15px;">
-          <input type="hidden" id="actionId" value="">  //可以把这里做成表单，好提交
+          <input type="hidden" id="actionId" value="">  <!-- //可以把这里做成表单，好提交 -->
      </div>
 </div>
 
