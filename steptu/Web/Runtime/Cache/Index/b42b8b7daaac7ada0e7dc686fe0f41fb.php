@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -188,7 +188,7 @@ background-repeat: no-repeat;
           <h3>旅行是一种生活</h3>
      </div>
      <div class="theme-popbod dform">
-           <form class="theme-signin" name="loginform" action="{:U('Index/loginVerify/loginVerify')}" method="post">
+           <form class="theme-signin" name="loginform" action="<?php echo U('Index/loginVerify/loginVerify');?>" method="post">
                 <ol>
                      <li><h4>请登录</h4></li>
                      <li><strong>用户名：</strong><input class="ipt" type="text" name="log" value="jq22" size="20" /></li>
