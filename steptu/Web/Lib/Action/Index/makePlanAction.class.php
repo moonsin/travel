@@ -10,7 +10,7 @@ class makePlanAction extends Action{
 	
 	public function makePlan(){	
 		if(IS_POST){
-
+			 
 			$shifa = I('shifadi');
 			$mudi = I('mudidi');
 			$huodongshijian =I('huodongshijian');
@@ -25,7 +25,7 @@ class makePlanAction extends Action{
 				);
 			import('ORG.Util.Page');
 			$count = M('action')->where($data)->count();
-			$page = new Page($count,6);
+			$page = new Page($count,1);
 			$limit = $page->firstRow .','. $page->listRows;
 
 			$content = M('action')->order('id DESC')->limit($limit)->where($data)->select();
