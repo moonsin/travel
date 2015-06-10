@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -72,7 +72,7 @@ background-repeat: no-repeat;
 <div class="content">
 	
 <div id="taocanbiaoti" class="taocanbiaoti">
-   {$scency[0].name}
+   <?php echo ($scency[0]["name"]); ?>
 </div>
 <div class="yulantu">
    <div id="banner-fade">
@@ -95,9 +95,9 @@ background-repeat: no-repeat;
    <div class="outer clearfix" id="calendarcontainer"> </div></div> 
 </div>
 <img src="../Public/images/package/youhuijiakuang.png" class="youhuijiakuang">
-<div class="youhuijiazi">优惠价: ￥<div class="youhuijia" id="youhuijia">{$scency[0].price}</div><div class="youhuijiazi2">起</div></div>
+<div class="youhuijiazi">优惠价: ￥<div class="youhuijia" id="youhuijia"><?php echo ($scency[0]["price"]); ?></div><div class="youhuijiazi2">起</div></div>
 <div class="feiyongshuoming" id="feiyongshuoming">
-    {$scency[0].descriptionPrice}
+    <?php echo ($scency[0]["descriptionPrice"]); ?>
 </div>
 
 <div class="yudinglan">
@@ -122,17 +122,17 @@ background-repeat: no-repeat;
 </table>
 </div>
 <div class="neirongtiao" id="youhuihuodong"><img src="../Public/images/package/neirongtiao.png" style="float:left"><div style="position:relative;top:-25px;left:25px;font-size: 15px;color: white;font-family: inherit;">优惠活动</div></div>
-<div class="youhuihuodongcontent" id="youhuihuodongcontent">{$scency[0].discountAction}</div>
+<div class="youhuihuodongcontent" id="youhuihuodongcontent"><?php echo ($scency[0]["discountAction"]); ?></div>
 
 <div class="neirongtiao" id="chanpintese"><img src="../Public/images/package/neirongtiao.png" style="float:left"><div style="position:relative;top:-25px;left:25px;font-size: 15px;color: white;font-family: inherit;">产品特色</div></div>
-<div class="youhuihuodongcontent" id="chanpintesecontent">{$scency[0].characteristics}</div>
+<div class="youhuihuodongcontent" id="chanpintesecontent"><?php echo ($scency[0]["characteristics"]); ?></div>
 
 <div class="neirongtiao" id="xingchengjieshao"><img src="../Public/images/package/neirongtiao.png" style="float:left"><div style="position:relative;top:-25px;left:25px;font-size: 15px;color: white;font-family: inherit;">行程介绍</div></div>
-<div class="youhuihuodongcontent" id="xingchengjieshaocontent">{$scency[0].routeDescription}</div>
+<div class="youhuihuodongcontent" id="xingchengjieshaocontent"><?php echo ($scency[0]["routeDescription"]); ?></div>
 
 
 <div class="neirongtiao" id="yudingxuzhi"><img src="../Public/images/package/neirongtiao.png" style="float:left"><div style="position:relative;top:-25px;left:25px;font-size: 15px;color: white;font-family: inherit;">预定须知</div></div>
-<div class="youhuihuodongcontent" id="yudingxuzhicontent">{$scency[0].bookInformation}</div>
+<div class="youhuihuodongcontent" id="yudingxuzhicontent"><?php echo ($scency[0]["bookInformation"]); ?></div>
 
 <div class="neirongtiao" id="youkedianping"><img src="../Public/images/package/neirongtiao.png" style="float:left"><div style="position:relative;top:-25px;left:25px;font-size: 15px;color: white;font-family: inherit;">游客点评</div></div>
 <div class="youhuihuodongcontent" id="youkedianpingcontent">
