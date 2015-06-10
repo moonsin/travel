@@ -28,7 +28,7 @@ class makePlanAction extends Action{
 			$page = new Page($count,6);
 			$limit = $page->firstRow .','. $page->listRows;
 
-			$content = M('action')->order('id ASC')->limit($limit)->where($data)->select();
+			$content = M('action')->order('id DESC')->limit($limit)->where($data)->select();
 			$this->content = $content;
 			$this->page = $page->show(); 
 
@@ -39,7 +39,7 @@ class makePlanAction extends Action{
 			$page = new Page($count,6);
 			$limit = $page->firstRow .','. $page->listRows;
 
-			$content = M('action')->order('id ASC')->limit($limit)->where($data)->select();
+			$content = M('action')->order('id DESC')->limit($limit)->where($data)->select();
 			$this->content = $content;
 			$this->page = $page->show(); 
 
