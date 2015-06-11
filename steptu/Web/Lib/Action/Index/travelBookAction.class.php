@@ -9,13 +9,16 @@
 		public function index(){  //显示旅游志模块的首页 ， 
 
 			$list = M("travelbook");
-			$count = $list->count();
+
+			$condition['checkStatus'] = 0;
+
+			$count = $list->where($condition)->count();
 			import('ORG.Util.Page');
-			$page = new Page($count,2);
-			$show = $page->show();
+			$page = new Page($count,4);
+			$this->show = $page->show();
 			$this->assign('page',$show);
 
-			$list = $list->limit($page->firstRow.','.$page->listRows)->order('id desc')->select();
+			$list = $list->where($condition)->limit($page->firstRow.','.$page->listRows)->order('id desc')->select();
 
 			$this->assign('list',$list);
 
@@ -35,7 +38,10 @@
 
 			//分页查看评论
 			$list = M("notecommentview");
-			$count = $list->where('noteId='.$id)->count();
+			
+			$note['noteId'] = $id;
+
+			$count = $list->where($note)->count();
 
 			$this->assign('count',$count);  //品论的条数
 
@@ -44,7 +50,7 @@
 			$page = new Page($count,2);
 			$show = $page->show();
 			$this->assign('page',$show);
-			$list = $list->where('noteId='.$id)->limit($page->firstRow.','.$page->listRows)->order('id desc')->select();
+			$list = $list->where($note)->limit($page->firstRow.','.$page->listRows)->order('id desc')->select();
 			$this->assign('list',$list);
 
 		
@@ -105,13 +111,16 @@
 		public function letterList(){
 
 			$listLetters = M("letterlist");
-			$count = $listLetters->count();
+
+			$checkStatus['checkstatus'] = 1;
+
+			$count = $listLetters->where($checkStatus)->count();
 			import('ORG.Util.NPage');
 			$pageLetters = new NPage($count,2);
 			$show = $pageLetters->show();
 			$this->assign('pageLetters',$show);
 
-			$listLetters = $listLetters->limit($pageLetters->firstRow.','.$pageLetters->listRows)->order('id desc')->select();
+			$listLetters = $listLetters->where($checkStatus)->limit($pageLetters->firstRow.','.$pageLetters->listRows)->order('id desc')->select();
 			$this->assign('listLetters',$listLetters);
 
 			$this->display();

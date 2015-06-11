@@ -130,10 +130,6 @@ class registerAction extends Action{
                 $this->ajaxReturn($data,'JSON');
                 return;
             }
-
-
-
-
         }
 
         else{
