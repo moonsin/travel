@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta charset="utf-8">
@@ -112,18 +112,16 @@ background-color: #d2dffe;
    <div class="zhusousuoxianshi">
        <div class="jiudianlou">
        	<!-- 这是一层酒店的楼 -->
-				<foreach name='content' item='v'>
-            <div class="jiudianceng">
+				<?php if(is_array($content)): foreach($content as $key=>$v): ?><div class="jiudianceng">
              <img src="../Public/images/travelstore/fengexian2.png">
               <div  class="jiudiancengshu">1</div>
-              <span class="jiudianming">{$v.hotelName}</span>
-              <div class="jiudianjiage">￥{$v.price}&nbsp<span class="jiudianjiageqi">起</span></div>
+              <span class="jiudianming"><?php echo ($v["hotelName"]); ?></span>
+              <div class="jiudianjiage">￥<?php echo ($v["price"]); ?>&nbsp<span class="jiudianjiageqi">起</span></div>
               <img src="../Public/images/travelstore/ditubiaozhi.png" class="ditubiaozhi" name="成都市一环路东一段">
-              <div class="jiudiancengdizhi">地址：{$v.area}</div>
+              <div class="jiudiancengdizhi">地址：<?php echo ($v["area"]); ?></div>
               <div class="jiudiancengpingjia">评价：满意&nbsp10&nbsp一般&nbsp10&nbsp不满意&nbsp10&nbsp</div>
-            </div>
-					</foreach>
-					{$page}
+            </div><?php endforeach; endif; ?>
+					<?php echo ($page); ?>
           	<!-- 这是一层酒店的楼 -->
             <!-- <div class="jiudianceng">
              <img src="../Public/images/travelstore/fengexian2.png">
