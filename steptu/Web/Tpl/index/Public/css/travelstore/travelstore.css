@@ -86,10 +86,19 @@ margin: 0 0 70px 20px;
 	top: 8px;
 	left: 2px;
 }
+.content11
+{
+	width: 790px;
+	height: 800px;
+	position: relative;
+	background-color: #e9efff;
+	top: 8px;
+	left: 2px;
+}
 .bottom
 {
 	margin: 35px 0 0 0;
-	width: 780px;
+	width: 790px;
 	height: 180px;
 	background-color: #EFF3FF;
 
@@ -239,7 +248,7 @@ margin: 0 0 70px 20px;
 {
 	position: absolute;
 	left: 3px;
-    top: 3px;
+    top: 33px;
     height: 414px;
     width: 340px;
 
@@ -250,6 +259,7 @@ margin: 0 0 70px 20px;
 	width: 330px;
 	height: 100px;
 	border:1px solid #AAAAAA;
+	cursor: pointer;
 }
 .chicengtu
 {
@@ -259,6 +269,7 @@ margin: 3px 0 0 2px;
 width: 145px;
 height: 95px;
 float: left;
+cursor: pointer;
 }
 .baiduditu
 {
@@ -280,6 +291,176 @@ float: left;
 	left: 9px;
 	background-color: #FFFFFF;
 	display: none;
+}
+
+.chisousuo
+{
+	margin: -20px 0 0 4px;
+	width: 330px;
+	height: 35px;
+	background-color: #0384e0;
+}
+.zhusousuo
+{
+	margin: 30px 0 0 25px;
+	height: 175px;
+	width: 670px;
+	/*background-color: red;*/
+}
+.zhusousuo2
+{
+	position: absolute;
+	top: 10px;
+	left: 18px;
+	height: 175px;
+	width: 750px;
+	background-color: #FFFFFF;
+}
+.buxian1
+{
+	position:absolute;top:107px;left:90px;font-size:13px;color: blue;cursor: pointer;
+}
+
+.buxian11
+{
+	position:absolute;top:77px;left:70px;font-size:13px;color: blue;cursor: pointer;
+}
+.buxian2
+{
+	position:absolute;top:137px;left:90px;font-size:13px;color: blue;cursor: pointer;
+}
+.buxian22
+{
+	position:absolute;top:107px;left:70px;font-size:13px;color: blue;cursor: pointer;
+}
+.weizhixianshi
+{
+	position: absolute;
+	width: 660px;
+	height: 25px;
+	left: 78px;
+	top: 168px;
+	/*background-color: red;*/
+	display: none;
+	cursor: pointer;
+}
+.weizhixianshi11
+{
+	position: absolute;
+	width: 660px;
+	height: 25px;
+	left: 78px;
+	top: 138px;
+	/*background-color: red;*/
+	display: none;
+	cursor: pointer;
+}
+.weizhiziti
+{
+	margin: 3px 0 0 20px;
+	font-size: 12px;
+	color: black;
+	font-family: inherit;
+	cursor: pointer;
+}
+.weizhiziti2
+{
+	
+	color: blue;
+
+}
+.zhusousuoxianshi
+{
+	position: absolute;
+	top: 200px;
+	left: 18px;
+	width: 750px;
+	height: 580px;
+	background-color: #FFFFFF;
+}
+.jiudianlou
+{
+	position: absolute;
+	width: 230px;
+	height: 511px;
+	left: 5px;
+	top:8px;
+	
+
+}
+.jiudianceng
+{
+	position: relative;
+	width: 230px;
+	height: 90px;
+	/*background-color: red;*/
+}
+.jiudiancengshu
+{
+	position:absolute;
+	top:10px;
+	left:5px;
+	width:20px;
+	height:20px;
+	border:1px solid #AAAAAA;
+	background-color:#2577e3;
+	color:white;text-align:center;
+	font-size:15px;
+	
+}
+.jiudianming
+{
+	position:absolute;
+	top:11px;
+	left:35px;
+	font-size: 18px;
+	color: #2876e2;
+
+}
+.jiudianjiage
+{
+	position:absolute;
+	top:10px;
+	left:155px;
+	font-size: 20px;
+	color: #fd6303;
+}
+.jiudianjiageqi
+{
+	font-size: 12px;
+	color: black;
+}
+.ditubiaozhi
+{
+	position:absolute;
+	top:40px;
+	left:5px;
+	cursor: pointer;
+}
+.jiudiancengdizhi
+{
+	position:absolute;
+	top:43px;
+	left:35px;
+	font-size: 13px;
+	cursor: pointer;
+}
+.jiudiancengpingjia
+{
+	position:absolute;
+	top:70px;
+	left:5px;
+	font-size: 13px;
+}
+.baidudituyinru
+{
+	position: absolute;
+	top:8px;
+	left: 255px;
+	width: 480px;
+	height: 530px;
+	/*background-color: red;*/
+
 }
 
 

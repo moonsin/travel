@@ -36,6 +36,7 @@ function showzhu(){
    chicontent.style.display="none";
     zhucontent.style.display="block";
 }
+
 </script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GW5oM4QR33hjrzFicL1iNtq3"></script>
 </head>
@@ -74,15 +75,15 @@ background-color: #d2dffe;
 	<img src="../Public/images/travelstore/smtiao.png" style="">
 	<div class="content1">
      <div class="sousuotiao">
-     	<form action="{:U('Index/travelStore/travelStore')}" name="smhuodongsousuo" method="post">
+     	<form action="" name="smhuodongsousuo" method="post">
      		<div style="position:absolute;top:9px;left:3px;font-size:12px; color:white;" > 始发地</div>
      		<input name="smshifadi" id="smshifadi" type="text" value="" style="position:absolute;top:7px;left:44px;width:70px;font-size:13px;border-radius:4px;"/>
      		<div style="position:absolute;top:9px;left:120px;font-size:12px; color:white;" > 目的地</div>
      		<input name="smmudidi" id="smmudidi" type="text" value="" style="position:absolute;top:7px;left:161px;width:70px;font-size:13px;border-radius:4px;"/>
      		<div style="position:absolute;top:9px;left:237px;font-size:12px; color:white;" > 起始日</div>
-     		<div style="position:absolute;top:6px;left:278px;"><input name="smqishiri" id="smqishiri" type="text" style="width:100px;" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser"></div>
+     		<div style="position:absolute;top:6px;left:278px;"><input id="smqishiri" type="text" style="width:100px;" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser"></div>
      		<div style="position:absolute;top:9px;left:384px;font-size:12px; color:white;" > 截止日</div>
-     		<div style="position:absolute;top:6px;left:425px;"><input name="smjiezhiri" id="smjiezhiri" type="text" style="width:100px;" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser"></div>
+     		<div style="position:absolute;top:6px;left:425px;"><input id="smjiezhiri" type="text" style="width:100px;" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser"></div>
      		<div style="position:absolute;left:530px;top:5px; cursor: pointer;"><input type="image" src="../Public/images/makeplan/sousuobiaozhi.png" style="border:0;" ></div>
      	</form>
      	</div>
@@ -101,27 +102,27 @@ background-color: #d2dffe;
         <!-- 图片列表 begin -->
          <div class="pic">
           <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><img src="../Public/images/travelstore/youhui.png" width="157" height="95" alt="一号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
-          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">{$store[0].name}</div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;">{$store[0].description}</div><div style="font-size:18px;font-family: SimHei;color:red;float:left;">￥{$store[0].price}</div></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">成都海南三日游</div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;">海南南山+植物园+植物园+呀诺达五日舒适团队</div><div style="font-size:18px;font-family: SimHei;color:red;float:left;">￥230</div></a>
 
          </div>
  <div class="pic">
           <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><img src="../Public/images/travelstore/youhui.png" width="157" height="95" alt="一号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
-          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">{$store[1].name}</div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;">{$store[1].description}</div><div style="font-size:18px;font-family: SimHei;color:red;;float:left;">￥{$store[1].price}</div></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">桂林1</div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;">海南南山+植物园+植物园+呀诺达五日舒适团队</div><div style="font-size:18px;font-family: SimHei;color:red;;float:left;">￥230</div></a>
 
          </div>
          <div class="pic">
           <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><img src="../Public/images/travelstore/youhui.png" width="157" height="95" alt="一号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
-          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">{$store[2].name}</div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;">{$store[2].description}</div><div style="font-size:18px;font-family: SimHei;color:red;;float:left;">￥{$store[2].price}</div></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">桂林2</div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;">海南南山+植物园+植物园+呀诺达五日舒适团队</div><div style="font-size:18px;font-family: SimHei;color:red;;float:left;">￥230</div></a>
 
          </div>
          <div class="pic">
           <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><img src="../Public/images/travelstore/youhui.png" width="157" height="95" alt="一号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
-          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">{$store[3].name}</div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;">{$store[3].description}</div><div style="font-size:18px;font-family: SimHei;color:red;;float:left;">￥{$store[3].price}</div></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">桂林3</div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;">海南南山+植物园+植物园+呀诺达五日舒适团队</div><div style="font-size:18px;font-family: SimHei;color:red;;float:left;">￥230</div></a>
 
          </div>
          <div class="pic">
           <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><img src="../Public/images/travelstore/youhui.png" width="157" height="95" alt="一号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
-          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">桂林</div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;">海南南山+植物园+植物园+呀诺达五日舒适团队</div><div style="font-size:18px;font-family: SimHei;color:red;;float:left;">￥230</div></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">桂林4</div><div style="font-size:13px;font-family: SimHei;color:#ff8004;float:left;">海南南山+植物园+植物园+呀诺达五日舒适团队</div><div style="font-size:18px;font-family: SimHei;color:red;;float:left;">￥230</div></a>
 
          </div>
         <!-- 图片列表 end -->
@@ -152,12 +153,30 @@ background-color: #d2dffe;
 
 
 <div class="chicontent" id="chicontent">
-    <div class="chitupian">
+    <div class="chitupian" id="test">
+      <div class="chisousuo">
+           <form action="" name="smchisousuo" method="post">
+           <div style="position:absolute;top:-10px;left:20px;font-size:14px; color:white;" > 目的地</div>
+        <input name="chisousuomudidi" id="chisousuomudidi" type="text" value="" style="position:absolute;top:-11px;left:67px;width:70px;font-size:13px;border-radius:4px;"/>
+            <div style="position:absolute;top:-10px;left:145px;font-size:14px; color:white;" > 店名</div>
+        <input name="chisousuodianming" id="chisousuodianming" type="text" value="" style="position:absolute;top:-11px;left:180px;width:100px;font-size:13px;border-radius:4px;"/>
+        <div style="position:absolute;left:300px;top:-15px; cursor: pointer;"><input type="image" src="../Public/images/makeplan/sousuobiaozhi.png" style="border:0;" ></div>
+            </form>
+ 
+      </div>
 <!-- 这是吃的每层楼的div 最多显示三个，你来做页码 -->
-       <div class="chiceng">
+       <div class="chiceng" name="清华大学">
           <div class="chicengtu" id="chicengtu"><img src="../Public/images/travelstore/chitu.jpg" width="145" height="95"></div>
           <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">店名:<span id="smdianming" style="font-size:14;">111113423</span></div>
-          <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">地址:<span id="smdizhi"></span></div>
+          <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">地址:<span class="smdizhi" >清华大学</span></div>
+          <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">电话:<span id="smdianhua"></span></div>
+</div>
+<!-- 以上是一层楼 -->
+<!-- 这是吃的每层楼的div 最多显示三个，你来做页码 -->
+       <div class="chiceng" name="成都市一环路东一段">
+          <div class="chicengtu" id="chicengtu"><img src="../Public/images/travelstore/chitu.jpg" width="145" height="95"></div>
+          <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">店名:<span id="smdianming" style="font-size:14;">111113423</span></div>
+          <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">地址:<span class="smdizhi">成都市一环路东一段</span></div>
           <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">电话:<span id="smdianhua"></span></div>
 </div>
 <!-- 以上是一层楼 -->
@@ -165,20 +184,12 @@ background-color: #d2dffe;
        <div class="chiceng">
           <div class="chicengtu" id="chicengtu"><img src="../Public/images/travelstore/chitu.jpg" width="145" height="95"></div>
           <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">店名:<span id="smdianming" style="font-size:14;">111113423</span></div>
-          <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">地址:<span id="smdizhi"></span></div>
+          <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">地址:<span class="smdizhi"></span></div>
           <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">电话:<span id="smdianhua"></span></div>
 </div>
 <!-- 以上是一层楼 -->
-<!-- 这是吃的每层楼的div 最多显示三个，你来做页码 -->
-       <div class="chiceng">
-          <div class="chicengtu" id="chicengtu"><img src="../Public/images/travelstore/chitu.jpg" width="145" height="95"></div>
-          <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">店名:<span id="smdianming" style="font-size:14;">111113423</span></div>
-          <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">地址:<span id="smdizhi"></span></div>
-          <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">电话:<span id="smdianhua"></span></div>
-</div>
-<!-- 以上是一层楼 -->
-  <img src="../Public/images/travelstore/shangye.png" style="position:absolute;top:356px;left:35px;">
-  <img src="../Public/images/travelstore/xiaye.png" style="position:absolute;top:355px;left:235px;">
+<!--   <img src="../Public/images/travelstore/shangye.png" style="position:absolute;top:356px;left:35px;">
+  <img src="../Public/images/travelstore/xiaye.png" style="position:absolute;top:355px;left:235px;"> -->
 </div>
 <div class="baiduditu">
    <div id="allmap">
@@ -188,6 +199,52 @@ background-color: #d2dffe;
 
 
 <div class="zhucontent" id="zhucontent">
+
+  <div class="zhusousuo">
+     <form action="" name="smzhusousuo" method="post">
+        <div style="font-size:14px; float:left;">目的地</div>
+        <input name="zhusousuomudidi" id="zhusousuomudidi" type="text" value="" style="margin:-3px 0 0 10px;width:240px;font-size:15px;border-radius:1px;border:1.5px solid #AAAAAA;"/>
+        <div style="position:absolute;top:70px;font-size:14px">入住日期</div>
+        <div style="position:absolute;top:67px;left:86px;"><input id="smruzhuri" type="text" style="width:120px;" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser"></div>
+        <div style="position:absolute;top:70px;left:217px;font-size:14px;font-size:14px">退房日期</div>
+          <div style="position:absolute;top:67px;left:283px;"><input id="smtuifangri" type="text" style="width:120px;" class="easyui-datebox" data-options="formatter:myformatter,parser:myparser"></div>
+          <div style="position:absolute;top:107px;font-size:13px;color:#AAAAAA;">价格</div>
+              
+               <div  class="buxian1" id="buxian1">不限</div>
+                <input type="checkbox" id="150price" style="position:absolute;top:110px;left:145px;"onclick="ceshi()">
+                <div  style="position:absolute;top:107px;left:160px;font-size:13px;">￥150以下</div>
+                <input type="checkbox" id="300price" style="position:absolute;top:110px;left:235px;"onclick="ceshi()">
+                <div  style="position:absolute;top:107px;left:250px;font-size:13px;">￥150-300</div>
+                <input type="checkbox" id="450price" style="position:absolute;top:110px;left:325px;"onclick="ceshi()">
+                <div  style="position:absolute;top:107px;left:340px;font-size:13px;">￥301-450</div>
+                <input type="checkbox" id="600price" style="position:absolute;top:110px;left:415px;"onclick="ceshi()">
+                <div  style="position:absolute;top:107px;left:430px;font-size:13px;">￥451-600</div>
+                <input type="checkbox" id="700price" style="position:absolute;top:110px;left:505px;"onclick="ceshi()">
+                <div  style="position:absolute;top:107px;left:520px;font-size:13px;">￥600以上</div>
+
+          <div style="position:absolute;top:137px;font-size:13px;color:#AAAAAA;">位置</div>
+          <div  id="buxian2" class="buxian2" onclick="showbuxian2()">不限</div>
+                <div style="position:absolute;top:137px;left:145px;" onclick="showshangyequ()">商业区<img src="../Public/images/travelstore/xiajiantou.png" style="position:relative;top:-2px;"id="shangyequtu" ></div>
+                <div style="position:absolute;top:137px;left:215px;" onclick="showjichang()">机场/火车站<img src="../Public/images/travelstore/xiajiantou.png" style="position:relative;top:-2px;"id="jichangtu"></div>
+                <div style="position:absolute;top:137px;left:315px;" onclick="showxingzhengqu()">行政区/下辖市县<img src="../Public/images/travelstore/xiajiantou.png"style="position:relative;top:-2px;" id="xingzhengqutu"></div>
+                 <div style="position:absolute;top:137px;left:445px;"onclick="showjingdian()">景点<img src="../Public/images/travelstore/xiajiantou.png" style="position:relative;top:-2px;"id="jingdiantu"></div>
+
+
+
+
+
+          <img src="../Public/images/travelstore/fengexian.png" style="position:absolute;top:160px;left:20px;">
+          <div class="weizhixianshi" id="shangyequ"><span class="weizhiziti">称呼去</span></div>
+          <div class="weizhixianshi" id="jichang"><span class="weizhiziti">称呼去</span><span class="weizhiziti">称呼去</span><span class="weizhiziti">称呼去</span></div>
+          <div class="weizhixianshi" id="xingzhengqu"><span class="weizhiziti" >金牛区</span><span class="weizhiziti" >金牛区</span><span class="weizhiziti" >金牛区</span><span class="weizhiziti" >金牛区</span></div>
+          <div class="weizhixianshi" id="jingdian"><span class="weizhiziti">称呼去</span><span class="weizhiziti">称呼去</span></div>
+         
+         <input type="hidden" name="yincang" id="yincang"  value="不限" />
+
+         <div style="position:absolute;top:187px;left:530px; cursor: pointer;"><input type="image" src="../Public/images/travelstore/sousuotu.png" style="border:0;" ></div>
+     </form>
+  </div>
+
 
 </div>
 
@@ -372,19 +429,24 @@ function CompScr(){
  }
 }
 //--><!]]>
+
 </script>
 </body>
 </html>
+
+
 <!-- 以下是百度地图代码 -->
 <script type="text/javascript">
   // 百度地图API功能
+  var zidingdizhi = "北京大学";
+   
   var map = new BMap.Map("allmap");
   var point = new BMap.Point(116.331398,39.897445);
   map.centerAndZoom(point,12);
   // 创建地址解析器实例
   var myGeo = new BMap.Geocoder();
   // 将地址解析结果显示在地图上,并调整地图视野
-  myGeo.getPoint("成都市一环路东一段", function(point){
+  myGeo.getPoint(zidingdizhi, function(point){
     if (point) {
       map.centerAndZoom(point, 16);
       map.addOverlay(new BMap.Marker(point));
@@ -392,4 +454,133 @@ function CompScr(){
       alert("您选择地址没有解析到结果!");
     }
   }, "北京市");
+
+  $(".chiceng").click(function(){
+    // alert($(this).attr("name"));
+
+    zidingdizhi=$(this).attr("name");
+     var map = new BMap.Map("allmap");
+  var point = new BMap.Point(116.331398,39.897445);
+  map.centerAndZoom(point,12);
+  // 创建地址解析器实例
+  var myGeo = new BMap.Geocoder();
+  // 将地址解析结果显示在地图上,并调整地图视野
+  myGeo.getPoint(zidingdizhi, function(point){
+    if (point) {
+      map.centerAndZoom(point, 16);
+      map.addOverlay(new BMap.Marker(point));
+    }else{
+      alert("您选择地址没有解析到结果!");
+    }
+  }, "北京市");
+
+  });
+
+  // 以下是搜索栏里价格不限变色处理函数
+ function ceshi()
+ {
+  if(document.getElementById("150price").checked){ buxian1.style.color="black"} 
+    else if(document.getElementById("300price").checked){ buxian1.style.color="black"} 
+      else if(document.getElementById("450price").checked){ buxian1.style.color="black"} 
+        else if(document.getElementById("600price").checked){ buxian1.style.color="black"} 
+          else if(document.getElementById("700price").checked){ buxian1.style.color="black"} 
+  else
+  buxian1.style.color="blue"
+ }
+// 以下是位置变色处理函数
+var weizhishangchuan = "不限";
+ function showshangyequ()
+ { 
+  
+   document.images['shangyequtu'].src='../Public/images/travelstore/shangjiantou.png';
+   document.images['jichangtu'].src='../Public/images/travelstore/xiajiantou.png';
+   document.images['xingzhengqutu'].src='../Public/images/travelstore/xiajiantou.png';
+   document.images['jingdiantu'].src='../Public/images/travelstore/xiajiantou.png';
+   jichang.style.display="none";
+   xingzhengqu.style.display="none";
+   jingdian.style.display="none";
+   shangyequ.style.display="block";
+ 
+
+ }
+ function showjichang()
+ {
+   document.images['jichangtu'].src='../Public/images/travelstore/shangjiantou.png';
+   document.images['shangyequtu'].src='../Public/images/travelstore/xiajiantou.png';
+   document.images['xingzhengqutu'].src='../Public/images/travelstore/xiajiantou.png';
+   document.images['jingdiantu'].src='../Public/images/travelstore/xiajiantou.png';
+  
+   xingzhengqu.style.display="none";
+   jingdian.style.display="none";
+   shangyequ.style.display="none";
+    jichang.style.display="block";
+ }
+  function showxingzhengqu()
+ {
+   document.images['xingzhengqutu'].src='../Public/images/travelstore/shangjiantou.png';
+   document.images['shangyequtu'].src='../Public/images/travelstore/xiajiantou.png';
+   document.images['jichangtu'].src='../Public/images/travelstore/xiajiantou.png';
+   document.images['jingdiantu'].src='../Public/images/travelstore/xiajiantou.png';
+  
+   jichang.style.display="none";
+   jingdian.style.display="none";
+   shangyequ.style.display="none";
+    xingzhengqu.style.display="block";
+ }
+   function showjingdian()
+ {
+   document.images['jingdiantu'].src='../Public/images/travelstore/shangjiantou.png';
+   document.images['shangyequtu'].src='../Public/images/travelstore/xiajiantou.png';
+   document.images['jichangtu'].src='../Public/images/travelstore/xiajiantou.png';
+   document.images['xingzhengqutu'].src='../Public/images/travelstore/xiajiantou.png';
+  
+   jichang.style.display="none";
+   xingzhengqu.style.display="none";
+   shangyequ.style.display="none";
+    jingdian.style.display="block";
+ }
+ function showbuxian2()
+ {
+   $(".weizhiziti").removeClass("weizhiziti2");
+  buxian2.style.color="blue"
+  document.images['jingdiantu'].src='../Public/images/travelstore/xiajiantou.png';
+   document.images['shangyequtu'].src='../Public/images/travelstore/xiajiantou.png';
+   document.images['jichangtu'].src='../Public/images/travelstore/xiajiantou.png';
+   document.images['xingzhengqutu'].src='../Public/images/travelstore/xiajiantou.png';
+    jichang.style.display="none";
+   xingzhengqu.style.display="none";
+   shangyequ.style.display="none";
+    jingdian.style.display="none";
+
+    weizhishangchuan=$('.buxian2').html();
+     $("#yincang").val(weizhishangchuan);
+      // alert($("#yincang").val());
+
+ }
+  
+  $(".weizhiziti").click(function(){
+    buxian2.style.color="black"
+    $(".weizhiziti").removeClass("weizhiziti2");
+
+    $(this).addClass("weizhiziti2");
+    weizhishangchuan=$(this).html();
+     $("#yincang").val(weizhishangchuan);
+      // alert($("#yincang").val());
+
+  });
+
+
+  $("#zhusousuomudidi").blur(function(){
+     $.post("http://127.0.0.1/steptu/index.php/travelStore/hello",function(data)
+    {
+      // alert( $("#zhusousuomudidi").val())
+      // alert(data['address'][2]);
+      document.getElementById("xingzhengqu").innerHTML=data['address'][2];
+    }
+      )
+
+   }
+  )
+
+
 </script>
