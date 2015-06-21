@@ -95,6 +95,15 @@ margin: 0 0 70px 20px;
 	top: 8px;
 	left: 2px;
 }
+.content22{
+	margin: 7px 0 0 5px;
+	background-color: #FFFFFF;
+	width: 760px;
+	/*height: 3622px;*/
+	
+	border:10px solid #E9EFFF;
+
+}
 .bottom
 {
 	margin: 35px 0 0 0;
@@ -462,8 +471,63 @@ cursor: pointer;
 	/*background-color: red;*/
 
 }
+.jiudianxiangxi
+{
+	width: 760px;
+	height: 300px;
+	background-color: #FFFFFF;
+	border-bottom:10px solid #E9EFFF;
+}
+.fangxingyuding
+{    
+	margin: 10px 0 0 0;
+	width: 760px;
+	background-color: #FFFFFF;
+	
+}
+.fangxingyudinganniu
+{    margin: 20px 0 20px 0;
+	width: 760px;
+	background-color: #FFFFFF;
+}
+.jiudianjieshao
+{    margin: 20px 0 0 0;
+	width: 760px;
+	background-color: #FFFFFF;
+}
+.zhukedianping
+{
+	width: 760px;
+	background-color: #FFFFFF;
+}
+.jiaotongditu
+{
+	width: 760px;
+	background-color: #FFFFFF;
+}
+.jiudianbaiduditu
+{   margin: 10px 0 15px 20px;
+	width: 720px;
+	height: 400px;
+}
+.yulantu
+{
+	position: absolute;
+	top: 55px;
+	left: 20px;
+	width: 452px;
+	height: 253px;
+	 /*-moz-transform:scale(1.2,1.1);  
+      -webkit-transform:scale(1.2,1.1);  
+      -o-transform:scale(1.2,1.1);*/ 
+}
+.xuanfukuang
+{width:211px; height: 320px; /*border: 1px solid #D4CD49;*/ position:fixed;left:2%;top:45%;background-color: #FFFFFF;
 
+}
+.xiaochuangceng
+{  position: relative;
+	height: 72px;
+	/*background-color: red;*/
 
-
-
-
+}
