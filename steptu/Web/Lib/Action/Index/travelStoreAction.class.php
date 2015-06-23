@@ -26,7 +26,7 @@
 					$this->content = $content;
 					$this->page = $page->show();
 				}
-				if($p0)
+			
 			}else{
 				import('ORG.Util.Page');
 				$count = M('hotel')->count();
