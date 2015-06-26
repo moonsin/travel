@@ -109,7 +109,7 @@
 			$data['shangyequ'] = M('city')->where(array('cityName'=>$mudidi))->field('business')->select();
 			$data['jichang'] =  M('city')->where(array('cityName'=>$mudidi))->field('station')->select();
 			$data['xingzhengqu'] = M('city')->where(array('cityName'=>$mudidi))->field('xian')->select();
-			$data['jingdian'] = M('city')->where(array('cityName'=>$mudidi))->field('xian')->select();;
+			$data['jingdian'] = M('city')->where(array('cityName'=>$mudidi))->field('jingdian')->select();;
 			$this->ajaxReturn($data);
 		}
 
