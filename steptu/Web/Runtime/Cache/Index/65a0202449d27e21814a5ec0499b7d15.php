@@ -2,14 +2,14 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	    <link rel="stylesheet" href="../Public/css/index.css" media="all" type="text/css">
+	    <link rel="stylesheet" href="__CSS__/index.css" media="all" type="text/css">
 	<title>游迹网</title>
-<script type="text/javascript" src="../Public/js/jquery-easyui-1.4.2/jquery.min.js"></script>
-<script type="text/javascript" src="../Public/js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
-<link rel="stylesheet" type="text/css" href="../Public/js/jquery-easyui-1.4.2/themes/default/easyui.css">
-  <link rel="stylesheet" type="text/css" href="../Public/js/jquery-easyui-1.4.2/themes/icon.css">
-  <link rel="stylesheet" type="text/css" href="../Public/js/jquery-easyui-1.4.2/demo/demo.css">
-  <link rel="stylesheet" href="../Public/css/css.css" media="all">
+<script type="text/javascript" src="__JS__/jquery-easyui-1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="__JS__/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="__JS__/jquery-easyui-1.4.2/themes/default/easyui.css">
+  <link rel="stylesheet" type="text/css" href="__JS__/jquery-easyui-1.4.2/themes/icon.css">
+  <link rel="stylesheet" type="text/css" href="__JS__/jquery-easyui-1.4.2/demo/demo.css">
+  <link rel="stylesheet" href="__CSS__/css.css" media="all">
 
 <script>
 jQuery(document).ready(function($) {
@@ -24,43 +24,69 @@ jQuery(document).ready(function($) {
 
 })
 </script>
+<script type="text/javascript">
+function showjieguo(){
+    zhuhaohuajieguo.style.display="block";
+    zhuhaohuatu.style.display="none";
+}
+
+</script>
 </head>
-<body background="../Public/images/background.png">
+<body >
+
+  <STYLE TYPE="text/css">
+
+<!--
+
+BODY {background-image: URL(__IMG__/background.png);
+
+background-position:center top;
+
+background-repeat: no-repeat;
+
+}
+
+-->
+</STYLE> 
+
+
 <div class="quanbu">
 
 	<div class="contentbg"></div>
 	<div class="content">
 		<!--优惠套餐条-->
-    <img src="../Public/images/youhuitiao1.png" class="youhuitiao1">
-    <img src="../Public/images/youhuitiao2.png" class="youhuitiao2">
+    <img src="__IMG__/youhuitiao1.png" class="youhuitiao1">
+    <img src="__IMG__/youhuitiao2.png" class="youhuitiao2">
 		<!--以下这一段是优惠套餐滚动实现-->
     <div style="position:absolute;top:30px;left:30px;">
   <div class="rollBox">
-     <div class="zuogun" onmousedown="ISL_GoUp()" onmouseup="ISL_StopUp1()" onmouseout="ISL_StopUp()" onmouseover="document.images['zuoguntu'].src='../Public/images/zuogun1.png'">
-      <img id="zuoguntu" src="../Public/images/zuogun.png">
+     <div class="zuogun" onmousedown="ISL_GoUp()" onmouseup="ISL_StopUp1()" onmouseout="ISL_StopUp()" onmouseover="document.images['zuoguntu'].src='__IMG__/zuogun1.png'">
+      <img id="zuoguntu" src="__IMG__/zuogun.png">
     </div>
      <div class="Cont" id="ISL_Cont">
       <div class="ScrCont">
        <div id="List1">
         <!-- 图片列表 begin -->
+       
          <div class="pic">
-          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><img src="../Public/images/youhui1.jpg" width="145" height="145" alt="一号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
-          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">桂林</div><div style="font-size:15px;font-family: SimHei;color:#ff8004;">2300起</div></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><img src="<?php echo ($season[0]["image"]); ?>.jpg" width="145" height="145" alt="一号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;"><?php echo ($season[0]["name"]); ?></div><div style="font-size:15px;font-family: SimHei;color:#ff8004;"><?php echo ($season[0]["price"]); ?>起</div></a>
 
          </div>
-        <div class="pic">
-          <a href="<#ZC_BLOG_HOST#>?cat=2" target="_blank"><img src="../Public/images/youhui2.jpg" width="145" height="145" alt="二号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
-          <a href="<#ZC_BLOG_HOST#>?cat=2" target="_blank">二号图片</a>
+      
+ <div class="pic">
+          <a href="<#ZC_BLOG_HOST#>?cat=2" target="_blank"><img src="<?php echo ($season[1]["image"]); ?>.jpg" width="145" height="145" alt="二号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=2" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;"><?php echo ($season[1]["name"]); ?></div><div style="font-size:15px;font-family: SimHei;color:#ff8004;"><?php echo ($season[1]["price"]); ?>起</div></a>
 
          </div>
          <div class="pic">
-          <a href="<#ZC_BLOG_HOST#>?cat=3" target="_blank"><img src="../Public/images/youhui3.jpg" width="145" height="145" alt="三号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
-          <a href="<#ZC_BLOG_HOST#>?cat=3" target="_blank">三号图片</a>
+          <a href="<#ZC_BLOG_HOST#>?cat=3" target="_blank"><img src="<?php echo ($season[2]["image"]); ?>.jpg" width="145" height="145" alt="三号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
+          <a href="<#ZC_BLOG_HOST#>?cat=3" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;"><?php echo ($season[2]["name"]); ?></div><div style="font-size:15px;font-family: SimHei;color:#ff8004;"><?php echo ($season[2]["price"]); ?>起</div></a>
 
          </div>
          <div class="pic">
           <a href="<#ZC_BLOG_HOST#>?cat=4" target="_blank"><img src="/image/4.jpg" width="145" height="145" alt="四号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
-          <a href="<#ZC_BLOG_HOST#>?cat=4" target="_blank">四号图片</a>
+          <a href="<#ZC_BLOG_HOST#>?cat=4" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;"><?php echo ($season[3]["name"]); ?></div><div style="font-size:15px;font-family: SimHei;color:#ff8004;"><?php echo ($season[3]["price"]); ?>起</div></a>
 
          </div>
          <div class="pic">
@@ -90,13 +116,16 @@ jQuery(document).ready(function($) {
 </div>
 <!--以上这一段是优惠套餐滚动实现-->
 
-	<img src="../Public/images/zhutiao.png" class="zhutiao">
+	<img src="__IMG__/zhutiao.png" class="zhutiao">
 	<div></div>
   <!--旅游志标题条-->
-	<img src="../Public/images/lvyouzhi1.png" class="lvyouzhi">
-  <img src="../Public/images/lvyouzhi2.png" class="lvyouzhi2">
+	<img src="__IMG__/lvyouzhi1.png" class="lvyouzhi">
+  <img src="__IMG__/lvyouzhi2.png" class="lvyouzhi2">
 	<div class="lvyouzhicontent">
-		
+      <img src="" style="width:150px;height:150px;margin:15px 0 0 15px;">
+     
+    <div style=" word-wrap:break-word; word-break:break-all;width:150px;margin:5px 0 0 15px;font-size:14px;"> 735dsjfhudshfjkdhsfjkhasdkjfhkdsjafhkdsahfkjdhsflkjdashfljsdhfalkj</div>
+	
 	</div>
   <div class="zhuhaohuaform">
   <form action="" name="zhuxianghaohua" method="post" >
@@ -108,40 +137,65 @@ jQuery(document).ready(function($) {
   <option value="洲际酒店">洲际酒店</option>
 </select>
   
-  <div style="position:absolute;left:50px;top:180px;"><input type="image" src="../Public/images/search.png" style="border:0;" ></div>
+  <div style="position:absolute;left:50px;top:180px;"><input type="image" src="__IMG__/search.png" style="border:0;" onclick="showjieguo()" />
+  </div>
   </form>
   </div>
-  <img src="../Public/images/zhufenge.png" class="zhufenge">
-  <div class="zhuhaohuatu">
+  <img src="__IMG__/zhufenge.png" class="zhufenge">
+  <div class="zhuhaohuatu" id="zhuhaohuatu">
 
 <div id="demo" style="height:250px;width:280px; overflow:hidden; ">
 <div id="demo1">
-<a href="http://www.16sucai.com" target="_blank" ><div id="jiudiantu"><img src="../Public/images/xilaideng.png" border="0" /><div id="jiudianming"style="position:relative;left:190px;top:-80px;font-size:15px;font-family: SimHei;color:#046bb3;">喜来登酒店<div id="jiudianjiage" style="font-size:15px;font-family: SimHei;color:#ff8004;">2300</div></div></div></a>
-<a href="http://www.16sucai.com" target="_blank" ><div id="jiudiantu"><img src="../Public/images/xilaideng.png" border="0" /><div id="jiudianming"style="position:relative;left:190px;top:-80px;font-size:15px;font-family: SimHei;color:#046bb3;">喜来登酒店<div id="jiudianjiage" style="font-size:15px;font-family: SimHei;color:#ff8004;">2300</div></div></div></a>
-<a href="http://www.16sucai.com" target="_blank" ><div id="jiudiantu"><img src="../Public/images/xilaideng.png" border="0" /><div id="jiudianming"style="position:relative;left:190px;top:-80px;font-size:15px;font-family: SimHei;color:#046bb3;">喜来登酒店<div id="jiudianjiage" style="font-size:15px;font-family: SimHei;color:#ff8004;">2300</div></div></div></a>
+<a href="http://www.16sucai.com" target="_blank" ><div id="jiudiantu"><img src="__IMG__/xilaideng.png" border="0" /><div id="jiudianming"style="position:relative;left:190px;top:-80px;font-size:15px;font-family: SimHei;color:#046bb3;">喜来登酒店<div id="jiudianjiage" style="font-size:15px;font-family: SimHei;color:#ff8004;">2300</div></div></div></a>
+<a href="http://www.16sucai.com" target="_blank" ><div id="jiudiantu"><img src="__IMG__/xilaideng.png" border="0" /><div id="jiudianming"style="position:relative;left:190px;top:-80px;font-size:15px;font-family: SimHei;color:#046bb3;">喜来登酒店<div id="jiudianjiage" style="font-size:15px;font-family: SimHei;color:#ff8004;">2300</div></div></div></a>
+<a href="http://www.16sucai.com" target="_blank" ><div id="jiudiantu"><img src="__IMG__/xilaideng.png" border="0" /><div id="jiudianming"style="position:relative;left:190px;top:-80px;font-size:15px;font-family: SimHei;color:#046bb3;">喜来登酒店<div id="jiudianjiage" style="font-size:15px;font-family: SimHei;color:#ff8004;">2300</div></div></div></a>
 </div>
 <div id="demo2"></div>
 </div>
 
-  </div>
+  </div> 
+<div style="position: absolute;left: 230px;top: 280px;height: 234px;width: 288px;display:none" id="zhuhaohuajieguo">
+
+<div style="position:absolute;left:10px;width:130px;height:100px;">
+<img src="" style="width:130px;height:70px;">
+<div style="font-size:13px;width:130px;">喜来登 <span style="position:absolute;left:90px;color:#ff8004;">￥500</span></div>
+</div>
+
+<div style="position:absolute;left:150px;width:130px;height:100px;">
+<img src="" style="width:130px;height:70px;">
+<div style="font-size:13px;width:130px;">喜来登 <span style="position:absolute;left:90px;color:#ff8004;">￥500</span></div>
+</div>
+
+<div style="position:absolute;left:10px;top:120px;width:130px;height:100px;">
+<img src="" style="width:130px;height:70px;">
+<div style="font-size:13px;width:130px;">喜来登 <span style="position:absolute;left:90px;color:#ff8004;">￥500</span></div>
+</div>
+
+<div style="position:absolute;left:150px;top:120px;width:130px;height:100px;">
+<img src="" style="width:130px;height:70px;">
+<div style="font-size:13px;width:130px;">喜来登 <span style="position:absolute;left:90px;color:#ff8004;">￥500</span></div>
+</div>
+
+</div>
+
 </div>
 	    
 	
-   <img src="../Public/images/travelsm.png" class="travelsm">
-   <img src="../Public/images/personal.png"class="personal">
-   <img src="../Public/images/travel.png" class="travel" >
-   <img src="../Public/images/makeplan.png" class="makeplan">
-   <img src="../Public/images/index.png"class="index">
-   <img src="../Public/images/yuan.png"class="yuan">
-   <img src="../Public/images/travelbook.png"class="travelbook">
-  <img src="../Public/images/xuanchuan.png"class="xuanchuan">
-   <!-- <img src="../Public/images/logo.png"class="logo"> -->
-   <img src="../Public/images/phone.png"class="phone">
+   <img src="__IMG__/travelsm.png" class="travelsm">
+   <img src="__IMG__/personal.png"class="personal">
+   <img src="__IMG__/travel.png" class="travel" >
+   <img src="__IMG__/makeplan.png" class="makeplan">
+   <img src="__IMG__/index.png"class="index">
+   <img src="__IMG__/yuan.png"class="yuan">
+   <img src="__IMG__/travelbook.png"class="travelbook">
+  <img src="__IMG__/xuanchuan.png"class="xuanchuan">
+   <!-- <img src="__IMG__/logo.png"class="logo"> -->
+   <img src="__IMG__/phone.png"class="phone">
 	
-		<img src="../Public/images/register.png"class="register">
+		<img src="__IMG__/register.png"class="register">
 
 
-<div ><a href="javascript:;"class=" btn-large theme-login"><img src="../Public/images/login.png"class="login"></a>
+<div ><a href="javascript:;"class=" btn-large theme-login"><img src="__IMG__/login.png"class="login"></a>
 </div>
 
 
@@ -153,25 +207,25 @@ jQuery(document).ready(function($) {
   <div class="bottomaboutus"><span class="bottombiao">关于游记</span><div class="bottomxuanxiang">关于我们<br>联系我们<br>一起合作<br>用户协议<br>诚聘英才</div></div>
 
 
-<img src="../Public/images/steptu.png" class="steptu">
-<img src="../Public/images/banquan.png" class="banquan">
-<img src="../Public/images/renzhengwang.png" class="renzhengwang">
-<img src="../Public/images/kexin.png" class="kexin">
-<img src="../Public/images/chengxin.png" class="chengxin">
+<img src="__IMG__/steptu.png" class="steptu">
+<img src="__IMG__/banquan.png" class="banquan">
+<img src="__IMG__/renzhengwang.png" class="renzhengwang">
+<img src="__IMG__/kexin.png" class="kexin">
+<img src="__IMG__/chengxin.png" class="chengxin">
 
 
 
 
 </div>
 
-<script src="../Public/js/index.js" type="text/javascript"></script>
+<script src="__JS__/index.js" type="text/javascript"></script>
 <div class="theme-popover">
      <div class="theme-poptit">
           <a href="javascript:;" title="关闭" class="close">×</a>
           <h3>旅行是一种生活</h3>
      </div>
      <div class="theme-popbod dform">
-           <form class="theme-signin" name="loginform" action="" method="post">
+           <form class="theme-signin" name="loginform" action="<?php echo U('Index/loginVerify/loginVerify');?>" method="post">
                 <ol>
                      <li><h4>请登录</h4></li>
                      <li><strong>用户名：</strong><input class="ipt" type="text" name="log" value="jq22" size="20" /></li>
