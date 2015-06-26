@@ -164,6 +164,8 @@ position: absolute;
 	background: #f3f8fe;
 	width: 182px;
 	height: 520px;
+
+
 }
 .zhuhaohuaform
 {   position: absolute;
@@ -190,9 +192,10 @@ position: absolute;
 	top: 280px;
 	height: 234px;
 	width: 288px;
-
+display: none;
 
 }
+
 .bottomsm
 {
 	position: absolute;
@@ -327,4 +330,7 @@ position: absolute;
   left:500px;
   top:7px;
 }
-
+.momingqimiao
+{
+	position: absolute;left: 230px;top: 280px;height: 234px;width: 288px;
+}
