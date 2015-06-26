@@ -165,10 +165,10 @@ background-color: #d2dffe;
 
       </div>
 <!-- 这是吃的每层楼的div 最多显示三个，你来做页码 -->
-<?php if(is_array($content)): foreach($content as $key=>$v): ?><div class="chiceng" name="成都市一环路东一段">
+<?php if(is_array($content)): foreach($content as $key=>$v): ?><div class="chiceng" name="<?php echo ($v["area"]); ?>">
           <div class="chicengtu" id="chicengtu"><img src="../Public/images/travelstore/chitu.jpg" width="145" height="95"></div>
           <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">店名:<span id="smdianming" style="font-size:14;"><?php echo ($v["storeName"]); ?></span></div>
-          <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">地址:<span class="smdizhi" >成都市一环路东一段</span></div>
+          <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">地址:<span class="smdizhi" ><?php echo ($v["area"]); ?></span></div>
           <div style="position:relative;top:5px;left:3px;font-size:14px;word-break: break-all;">电话:<span id="smdianhua"><?php echo ($v["phone"]); ?></span></div>
 </div><?php endforeach; endif; ?>
 <?php echo ($page); ?>
