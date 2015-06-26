@@ -115,7 +115,7 @@ background-color: #d2dffe;
 				<?php if(is_array($content)): foreach($content as $key=>$v): ?><div class="jiudianceng">
              <img src="../Public/images/travelstore/fengexian2.png">
               <div  class="jiudiancengshu">1</div>
-              <span class="jiudianming"><?php echo ($v["hotelName"]); ?></span>
+            <a href="<?php echo U('Index/travelStore/jiudian','','');?>/id/<?php echo ($v["id"]); ?>" > <span class="jiudianming"><?php echo ($v["hotelName"]); ?></span></a>
               <div class="jiudianjiage">￥<?php echo ($v["price"]); ?>&nbsp<span class="jiudianjiageqi">起</span></div>
               <img src="../Public/images/travelstore/ditubiaozhi.png" class="ditubiaozhi" name="成都市一环路东一段">
               <div class="jiudiancengdizhi">地址：<?php echo ($v["area"]); ?></div>

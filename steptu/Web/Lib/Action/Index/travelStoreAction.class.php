@@ -26,7 +26,7 @@
 					$this->content = $content;
 					$this->page = $page->show();
 				}
-			
+
 			}else{
 				import('ORG.Util.Page');
 				$count = M('hotel')->count();
@@ -106,13 +106,20 @@
 		public function living(){
 			$mudidi = $_POST['data'];
 			//$eat=M('city')->where(array('cityName'=>$mudidi))->select();
-			$data['shangyequ'] = M('city')->where(array('cityName'=>$mudidi))->getField('business');
-			$data['jichang'] =  M('city')->where(array('cityName'=>$mudidi))->getField('station');
-			$data['xingzhengqu'] = M('city')->where(array('cityName'=>$mudidi))->getField('xian');
-			$data['jingdian'] = $eat.jingdian;
+			$data['shangyequ'] = M('city')->where(array('cityName'=>$mudidi))->field('business')->select();
+			$data['jichang'] =  M('city')->where(array('cityName'=>$mudidi))->field('station')->select();
+			$data['xingzhengqu'] = M('city')->where(array('cityName'=>$mudidi))->field('xian')->select();
+			$data['jingdian'] = M('city')->where(array('cityName'=>$mudidi))->field('xian')->select();;
 			$this->ajaxReturn($data);
 		}
 
+		public function jiudian(){
+			$id = $_GET['id'];
+			$data = M('hotel')->where(array('id'=>$id))->find();
+			$this->assign('hotel',$data);
+			$this->display();
+
+		}
 
 
 	}

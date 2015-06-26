@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta charset="utf-8">
@@ -59,7 +59,7 @@ background-color: #d2dffe;
   <div style="width:211px;height:35px;background-color:#058ff1;"><span style="font-size:16px;color:white;position:relative;top:8px;left:3px;">我浏览过的酒店</span></div>
  <!--  以下是一层的样式 -->
 <div class="xiaochuangceng">
-<div style="position:relative;top:5px;left:2px;font-size:16px;color:#1983d9;float:left;" id="xiaochuangjiudian">成都{$hotel.hotelName}酒店</div>
+<div style="position:relative;top:5px;left:2px;font-size:16px;color:#1983d9;float:left;" id="xiaochuangjiudian">成都<?php echo ($hotel["hotelName"]); ?>酒店</div>
 <div style="position:absolute;top:5px;left:150px;font-size:13px;color:#FF6306;">￥300起</div>
   <div style="position:relative;top:10px;left:2px;font-size:13px;float:left;">酒店地址：<span id="xiaochuangjiudiandizhi">成都市成华区一环路东一段</span></div>
   <img src="../Public/images/travelstore/xiaochuangfenge.png" style="position:absolute;top:90%;left:2px;float:left;" >
@@ -119,13 +119,13 @@ background-color: #d2dffe;
       </div>
 </div>
 
-    <div style="position:absolute;top:55px;left:485px;font-size:19px;color:#1983d9;">成都{$hotel.hotelName}酒店</div>
-    <div style="position:absolute;top:120px;left:495px;font-size:13px;">每间每晚:<span style="color:#FF6306;font-size:19px;">￥{$hotel.price}</span>&nbsp起</div>
-        <div style="position:absolute;top:150px;left:495px;font-size:13px;">酒店地址：<span id="jdjiudiandizhi">{$hotel.area}</span></div>
+    <div style="position:absolute;top:55px;left:485px;font-size:19px;color:#1983d9;">成都<?php echo ($hotel["hotelName"]); ?>酒店</div>
+    <div style="position:absolute;top:120px;left:495px;font-size:13px;">每间每晚:<span style="color:#FF6306;font-size:19px;">￥<?php echo ($hotel["price"]); ?></span>&nbsp起</div>
+        <div style="position:absolute;top:150px;left:495px;font-size:13px;">酒店地址：<span id="jdjiudiandizhi"><?php echo ($hotel["area"]); ?></span></div>
 
 
     </div>
-    <div class="fangxingyuding"><img src="../Public/images/travelstore/fangxingyuding.png" style="margin:0 0 0 5px;">{$hotel.hotelBrand}</div>
+    <div class="fangxingyuding"><img src="../Public/images/travelstore/fangxingyuding.png" style="margin:0 0 0 5px;"><?php echo ($hotel["hotelBrand"]); ?></div>
     <div class="fangxingyudinganniu">
       <form action="" name="smzhusousuo" method="post">
       <div style="margin:0 0 0 20px;float:left;font-size:13px;">入住</div>
@@ -145,7 +145,7 @@ background-color: #d2dffe;
 
 
     </form></div>
-    <div class="jiudianjieshao"><img src="../Public/images/travelstore/jiudianjieshao.png" style="margin:0 0 0 5px;">{$hotel.comment}</div>
+    <div class="jiudianjieshao"><img src="../Public/images/travelstore/jiudianjieshao.png" style="margin:0 0 0 5px;"><?php echo ($hotel["comment"]); ?></div>
     <div class="zhukedianping"><img src="../Public/images/travelstore/zhukedianping.png" style="margin:0 0 0 5px;">5435345234</div>
     <div class="jiaotongditu"><img src="../Public/images/travelstore/jiaotongditu.png" style="margin:0 0 0 5px;">
     	<div class="jiudianbaiduditu">
