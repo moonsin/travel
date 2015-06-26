@@ -47,7 +47,7 @@ background-repeat: no-repeat;
 }
 
 -->
-</STYLE> 
+</STYLE>
 
 
 <div class="quanbu">
@@ -67,13 +67,13 @@ background-repeat: no-repeat;
       <div class="ScrCont">
        <div id="List1">
         <!-- 图片列表 begin -->
-       
+
          <div class="pic">
           <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><img src="{$season[0].image}.jpg" width="145" height="145" alt="一号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
           <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">{$season[0].name}</div><div style="font-size:15px;font-family: SimHei;color:#ff8004;">{$season[0].price}起</div></a>
 
          </div>
-      
+
  <div class="pic">
           <a href="<#ZC_BLOG_HOST#>?cat=2" target="_blank"><img src="{$season[1].image}.jpg" width="145" height="145" alt="二号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
           <a href="<#ZC_BLOG_HOST#>?cat=2" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;">{$season[1].name}</div><div style="font-size:15px;font-family: SimHei;color:#ff8004;">{$season[1].price}起</div></a>
@@ -112,7 +112,7 @@ background-repeat: no-repeat;
      <div class="yougun" onmousedown="ISL_GoDown()" onmouseup="ISL_StopDown1()" onmouseout="ISL_StopDown()" onmouseover="document.images['youguntu'].src='/steptu/Web/Tpl/Index/Public/images/yougun1.png'" >
      	<img id="youguntu" src="/steptu/Web/Tpl/Index/Public/images/yougun.png"></div>
     </div>
-   
+
 </div>
 <!--以上这一段是优惠套餐滚动实现-->
 
@@ -123,20 +123,22 @@ background-repeat: no-repeat;
   <img src="__IMG__/lvyouzhi2.png" class="lvyouzhi2">
 	<div class="lvyouzhicontent">
       <img src="" style="width:150px;height:150px;margin:15px 0 0 15px;">
-     
-    <div style=" word-wrap:break-word; word-break:break-all;width:150px;margin:5px 0 0 15px;font-size:14px;"> 735dsjfhudshfjkdhsfjkhasdkjfhkdsjafhkdsahfkjdhsflkjdashfljsdhfalkj</div>
-	
+
+    <div style=" word-wrap:break-word; word-break:break-all;width:150px;margin:5px 0 0 15px;font-size:14px;">{$note[0].note}</div>
+
 	</div>
   <div class="zhuhaohuaform">
-  <form action="" name="zhuxianghaohua" method="post" >
+  <form action="{:U('Index/index/index')}" name="zhuxianghaohua" method="post" >
   <div style="position:absolute;left:0px;top:0px;font-size:15px;font-family: SimHei;">目的地</div><input name="destination" type="text" style="position:absolute;width:95px;left:70px;top:-3px;border-radius:4px;"/>
   <div style="position:absolute;left:0px;top:40px;font-size:15px;font-family: SimHei;">入住时间</div><div style="position:absolute;width:90px;left:70px;top:37px;"><input name="intime" type="text"style="width:100px;" class="easyui-datebox" required="required" data-options="formatter:myformatter,parser:myparser"/></div>
   <div style="position:absolute;left:0px;top:80px;font-size:15px;font-family: SimHei;">离店时间</div><div style="position:absolute;width:120px;left:70px;top:77px;"><input id="outtime" type="text" style="width:100px;" class="easyui-datebox" required="required" data-options="formatter:myformatter,parser:myparser"/></div>
   <div style="position:absolute;left:0px;top:120px;font-size:15px;font-family: SimHei;">酒店品牌</div><select name="brand" style="position:absolute;width:100px;left:70px;top:117px;font-size:18px;">
-  <option value="希尔顿">希尔顿</option>
-  <option value="洲际酒店">洲际酒店</option>
+		<foreach name='hotel' item='hotel'>
+  <option value="{$hotel.hotelName}" name='brand'>{$hotel.hotelName}</option>
+</foreach>
+  <!-- <option value="洲际酒店">洲际酒店</option> -->
 </select>
-  
+
   <div style="position:absolute;left:50px;top:180px;"><input type="image" src="__IMG__/search.png" style="border:0;" onclick="showjieguo()" />
   </div>
   </form>
@@ -153,15 +155,15 @@ background-repeat: no-repeat;
 <div id="demo2"></div>
 </div>
 
-  </div> 
+  </div>
 <div style="position: absolute;left: 230px;top: 280px;height: 234px;width: 288px;display:none" id="zhuhaohuajieguo">
-
+<foreach name='hotel' item='hotel'>
 <div style="position:absolute;left:10px;width:130px;height:100px;">
 <img src="" style="width:130px;height:70px;">
-<div style="font-size:13px;width:130px;">喜来登 <span style="position:absolute;left:90px;color:#ff8004;">￥500</span></div>
+<div style="font-size:13px;width:130px;">{$hotel.hotelName}<span style="position:absolute;left:90px;color:#ff8004;">{$hotel.price}</span></div>
 </div>
-
-<div style="position:absolute;left:150px;width:130px;height:100px;">
+</foreach>
+<!-- <div style="position:absolute;left:150px;width:130px;height:100px;">
 <img src="" style="width:130px;height:70px;">
 <div style="font-size:13px;width:130px;">喜来登 <span style="position:absolute;left:90px;color:#ff8004;">￥500</span></div>
 </div>
@@ -174,13 +176,13 @@ background-repeat: no-repeat;
 <div style="position:absolute;left:150px;top:120px;width:130px;height:100px;">
 <img src="" style="width:130px;height:70px;">
 <div style="font-size:13px;width:130px;">喜来登 <span style="position:absolute;left:90px;color:#ff8004;">￥500</span></div>
-</div>
+</div> -->
 
 </div>
 
 </div>
-	    
-	
+
+
    <img src="__IMG__/travelsm.png" class="travelsm">
    <img src="__IMG__/personal.png"class="personal">
    <img src="__IMG__/travel.png" class="travel" >
@@ -191,7 +193,7 @@ background-repeat: no-repeat;
   <img src="__IMG__/xuanchuan.png"class="xuanchuan">
    <!-- <img src="__IMG__/logo.png"class="logo"> -->
    <img src="__IMG__/phone.png"class="phone">
-	
+
 		<img src="__IMG__/register.png"class="register">
 
 
@@ -236,6 +238,6 @@ background-repeat: no-repeat;
      </div>
 </div>
 <div class="theme-popover-mask"></div>
-  
+
 </body>
 </html>
