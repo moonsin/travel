@@ -25,7 +25,7 @@ class loginVerifyAction extends Action{
 		// 	$data['err']=2;
 		// 	$data['msg']='验证码错误';
 		// 	$this->ajaxReturn($data,'JSON');
-		// } 
+		// }
 		//1.第一个I方法name参数是前端表单里帐号的name
 		//2.M方法里的参数是数据库的表名
 		//3.第二个I方法password参数是前端表单里密码的name，以md5格式加密
@@ -49,10 +49,11 @@ class loginVerifyAction extends Action{
 			$data['code']=1;
 			$data['msg']='登录成功';
 			$this->ajaxReturn($data,'JSON');
-
+			setcookie("username",$user['username'],time()+3600,"/");
+			setcookie("userid",$user['id'],time()+3600,"/");
 		}
-		
-		 
+
+
 	}
 //		session('uid',$user['id']);
 //		session('username',$user['username']);
