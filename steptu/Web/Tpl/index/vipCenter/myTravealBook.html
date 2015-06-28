@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../Public/css/index.css" media="all" type="text/css">
     <title>写给未来的信</title>
+     <script  src="/travel/steptu/Web/Tpl/ueditor/ueditor.config.js"></script>
+    <script src="/travel/steptu/Web/Tpl/ueditor/ueditor.all.min.js"></script>
     <script src="../Public/js/jquery-easyui-1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src='..Public/js/jquery.form.jss'></script>
     <script src="../Public/js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
@@ -19,6 +21,11 @@
        $("#realTravealBook").hide();
     });
     </script>
+    <style type="text/css">
+        #content{
+           margin-left: 72px;
+        }
+    </style>
 </head>
 <body>
 <div class="quanbu">
@@ -63,15 +70,28 @@
                     <div class="background">
                         <div class="singleLine">
                             <div class="hateWords">邮箱：</div>
-                            <label><input class="easyui-textbox" name='emaile' type="email" style="width: 550px" required></label>
+                            <label><input class="easyui-textbox" name='emaile' type="email" style="width: 550px" required id="emaile"></label>
                         </div>
                         <div class="singleLine">
                             <div class="hateWords">主题：</div>
-                            <label><input class="easyui-textbox" style="width: 550px"  name='theme' required></label>
+                            <label><input class="easyui-textbox" style="width: 550px"  name='theme' id="theme" required></label>
                         </div>
                         <div class="singleLine">
                             <div class="hateWords">内容：</div>
-                            <label><input class="easyui-textbox" data-options="multiline:true" style="height: 50px;width: 550px"  name='content' required></label>
+                         
+                            <textarea id="content" name='content'></textarea>
+                   
+                         <script type="text/javascript">
+                            window.UEDITOR_HOME_URL = '/travel/steptu/Web/Tpl/ueditor/';
+                            window.UEDITOR_CONFIG.toolbars = [['undo', 'redo','|',
+                                                               'bold', 'italic',
+                                                                'emotion','date', 'time','insertimage'
+                                                               ]];
+                            window.UEDITOR_CONFIG.scaleEnabled  = true;
+                            window.UEDITOR_CONFIG.elementPathEnabled = false;
+                            var ue = UE.getEditor('content',{initialFrameWidth:550,initialFrameHeight:20});
+                         </script>
+
                         </div>
                         <div class="singleLine">
                             <div class="hateWords">发送时间：</div>
@@ -87,8 +107,23 @@
                             <label><input type="radio" name="status" value="1" checked="checked" required>可以公开</label>
                         </div>
                     </div>
-                    <button type="submit" style="background-image: url('../Public/images/vipCenter/sendButton.png');border: none;width: 80px;height: 30px;margin-left: 10%;margin-top: 20px"></button>
+                    <button id="commit" type="submit" style="background-image: url('../Public/images/vipCenter/sendButton.png');border: none;width: 80px;height: 30px;margin-left: 10%;margin-top: 20px"></button>
                 </form>
+
+                 <script type="text/javascript">
+                //     $(function(){
+                //         $("#commit").click(function(){
+                //             // alert($("#emaile").val() == '');
+                //             if($("#emaile").val() == ''){
+                //                 alert("邮箱不能为空");
+                //             }else if($("#theme").val() == ""){
+                //                 alert("主题不能为空");
+                //             }else if (UE.getEditor('content').getContent() == '') {
+                //                 alert("编辑内容不能为空");
+                //             }
+                //         });
+                //     })
+                 </script>
                 <div id="realLetter" style="display:block">
                      <foreach name='list' item='v'>
                         <div class="detialLetter"> <!-- 从这里开始循环，每一篇文章，一个div-->
@@ -99,7 +134,7 @@
                                 <span style="font-size: 13px;color: #2c42ea">发送日期:{$v.time}</span>
                             </div>
                             <div class="realPassage">
-                                {$v.content}
+                                {$v.content|htmlspecialchars_decode}
                             </div>
                         </div>  <!-- 循环到这里结束-->
                     </foreach>
