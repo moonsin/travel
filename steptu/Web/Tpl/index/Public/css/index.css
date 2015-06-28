@@ -192,7 +192,7 @@ position: absolute;
 	top: 280px;
 	height: 234px;
 	width: 288px;
-display: none;
+    display: block;
 
 }
 

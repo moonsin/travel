@@ -24,6 +24,13 @@ jQuery(document).ready(function($) {
 
 })
 </script>
+<script type="text/javascript">
+function showjieguo(){
+    zhuhaohuajieguo.style.display="block";
+    zhuhaohuatu.style.display="none";
+}
+
+</script>
 </head>
 <body >
 
@@ -40,7 +47,7 @@ background-repeat: no-repeat;
 }
 
 -->
-</STYLE> 
+</STYLE>
 
 
 <div class="quanbu">
@@ -60,13 +67,13 @@ background-repeat: no-repeat;
       <div class="ScrCont">
        <div id="List1">
         <!-- 图片列表 begin -->
-       
+
          <div class="pic">
           <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><img src="<?php echo ($season[0]["image"]); ?>.jpg" width="145" height="145" alt="一号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
           <a href="<#ZC_BLOG_HOST#>?cat=1" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;"><?php echo ($season[0]["name"]); ?></div><div style="font-size:15px;font-family: SimHei;color:#ff8004;"><?php echo ($season[0]["price"]); ?>起</div></a>
 
          </div>
-      
+
  <div class="pic">
           <a href="<#ZC_BLOG_HOST#>?cat=2" target="_blank"><img src="<?php echo ($season[1]["image"]); ?>.jpg" width="145" height="145" alt="二号图片"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></a>
           <a href="<#ZC_BLOG_HOST#>?cat=2" target="_blank"><div style="font-size:15px;font-family: SimHei;color:#046bb3;"><?php echo ($season[1]["name"]); ?></div><div style="font-size:15px;font-family: SimHei;color:#ff8004;"><?php echo ($season[1]["price"]); ?>起</div></a>
@@ -105,7 +112,7 @@ background-repeat: no-repeat;
      <div class="yougun" onmousedown="ISL_GoDown()" onmouseup="ISL_StopDown1()" onmouseout="ISL_StopDown()" onmouseover="document.images['youguntu'].src='/steptu/Web/Tpl/Index/Public/images/yougun1.png'" >
      	<img id="youguntu" src="/steptu/Web/Tpl/Index/Public/images/yougun.png"></div>
     </div>
-   
+
 </div>
 <!--以上这一段是优惠套餐滚动实现-->
 
@@ -115,23 +122,27 @@ background-repeat: no-repeat;
 	<img src="__IMG__/lvyouzhi1.png" class="lvyouzhi">
   <img src="__IMG__/lvyouzhi2.png" class="lvyouzhi2">
 	<div class="lvyouzhicontent">
-		
+      <img src="" style="width:150px;height:150px;margin:15px 0 0 15px;">
+
+    <div style=" word-wrap:break-word; word-break:break-all;width:150px;margin:5px 0 0 15px;font-size:14px;"><?php echo ($note[0]["note"]); ?></div>
+
 	</div>
   <div class="zhuhaohuaform">
-  <form action="" name="zhuxianghaohua" method="post" >
+  <form action="<?php echo U('Index/index/index');?>" name="zhuxianghaohua" method="post" >
   <div style="position:absolute;left:0px;top:0px;font-size:15px;font-family: SimHei;">目的地</div><input name="destination" type="text" style="position:absolute;width:95px;left:70px;top:-3px;border-radius:4px;"/>
   <div style="position:absolute;left:0px;top:40px;font-size:15px;font-family: SimHei;">入住时间</div><div style="position:absolute;width:90px;left:70px;top:37px;"><input name="intime" type="text"style="width:100px;" class="easyui-datebox" required="required" data-options="formatter:myformatter,parser:myparser"/></div>
   <div style="position:absolute;left:0px;top:80px;font-size:15px;font-family: SimHei;">离店时间</div><div style="position:absolute;width:120px;left:70px;top:77px;"><input id="outtime" type="text" style="width:100px;" class="easyui-datebox" required="required" data-options="formatter:myformatter,parser:myparser"/></div>
   <div style="position:absolute;left:0px;top:120px;font-size:15px;font-family: SimHei;">酒店品牌</div><select name="brand" style="position:absolute;width:100px;left:70px;top:117px;font-size:18px;">
-  <option value="希尔顿">希尔顿</option>
-  <option value="洲际酒店">洲际酒店</option>
+		<?php if(is_array($hotel)): foreach($hotel as $key=>$hotel): ?><option value="<?php echo ($hotel["hotelName"]); ?>" name='brand'><?php echo ($hotel["hotelName"]); ?></option><?php endforeach; endif; ?>
+  <!-- <option value="洲际酒店">洲际酒店</option> -->
 </select>
-  
-  <div style="position:absolute;left:50px;top:180px;"><input type="image" src="__IMG__/search.png" style="border:0;" ></div>
+
+  <div style="position:absolute;left:50px;top:180px;"><input type="image" src="__IMG__/search.png" style="border:0;" onclick="showjieguo()" />
+  </div>
   </form>
   </div>
   <img src="__IMG__/zhufenge.png" class="zhufenge">
-  <div class="zhuhaohuatu">
+  <div class="zhuhaohuatu" id="zhuhaohuatu">
 
 <div id="demo" style="height:250px;width:280px; overflow:hidden; ">
 <div id="demo1">
@@ -143,40 +154,90 @@ background-repeat: no-repeat;
 </div>
 
   </div>
+<div style="position: absolute;left: 230px;top: 280px;height: 234px;width: 288px;display:none" id="zhuhaohuajieguo">
+<?php if(is_array($hotel)): foreach($hotel as $key=>$hotel): ?><div style="position:absolute;left:10px;width:130px;height:100px;">
+<img src="" style="width:130px;height:70px;">
+<div style="font-size:13px;width:130px;"><?php echo ($hotel["hotelName"]); ?><span style="position:absolute;left:90px;color:#ff8004;"><?php echo ($hotel["price"]); ?></span></div>
+</div><?php endforeach; endif; ?>
+<!-- <div style="position:absolute;left:150px;width:130px;height:100px;">
+<img src="" style="width:130px;height:70px;">
+<div style="font-size:13px;width:130px;">喜来登 <span style="position:absolute;left:90px;color:#ff8004;">￥500</span></div>
 </div>
-	    
-	
-   <img src="__IMG__/travelsm.png" class="travelsm">
-   <img src="__IMG__/personal.png"class="personal">
-   <img src="__IMG__/travel.png" class="travel" >
-   <img src="__IMG__/makeplan.png" class="makeplan">
-   <img src="__IMG__/index.png"class="index">
-   <img src="__IMG__/yuan.png"class="yuan">
-   <img src="__IMG__/travelbook.png"class="travelbook">
+
+<div style="position:absolute;left:10px;top:120px;width:130px;height:100px;">
+<img src="" style="width:130px;height:70px;">
+<div style="font-size:13px;width:130px;">喜来登 <span style="position:absolute;left:90px;color:#ff8004;">￥500</span></div>
+</div>
+
+<div style="position:absolute;left:150px;top:120px;width:130px;height:100px;">
+<img src="" style="width:130px;height:70px;">
+<div style="font-size:13px;width:130px;">喜来登 <span style="position:absolute;left:90px;color:#ff8004;">￥500</span></div>
+</div> -->
+
+</div>
+
+</div>
+
+<a href="<?php echo U('Index/travelStore/travelStore');?>"><img src="__IMG__/travelsm.png" class="travelsm"></a>
+        <a href="<?php echo U('Index/vipCenter/myInformation');?>"><img src="__IMG__/personal.png" class="personal"></a>
+        <a href="<?php echo U('Index/travelTheme/travelTheme');?>"> <img src="__IMG__/travel.png" class="travel" ></a>
+        <a href="<?php echo U('Index/makePlan/makePlan');?>"> <img src="__IMG__/makeplan.png" class="makeplan"></a>
+        <a href="<?php echo U('Index/index/index');?>"><img src="__IMG__/index.png" class="index"></a>
+        <a href="<?php echo U('Index/travelBook/travelBook');?>"><img src="__IMG__/travelbook.png" class="travelbook"></a>
   <img src="__IMG__/xuanchuan.png"class="xuanchuan">
    <!-- <img src="__IMG__/logo.png"class="logo"> -->
    <img src="__IMG__/phone.png"class="phone">
-	
-		<img src="__IMG__/register.png"class="register">
+
+	<img src="__IMG__/register.png"class="register" id="reanniu">
 
 
-<div ><a href="javascript:;"class=" btn-large theme-login"><img src="__IMG__/login.png"class="login"></a>
+<div id="loganniu" ><a href="javascript:;"class=" btn-large theme-login"><img src="__IMG__/login.png"class="login"></a>
 </div>
 
-
-<div class="bottom"></div>
-  <div class="bottomsm"><span class="bottombiao">旅游超市</span><div class="bottomxuanxiang">住<br>吃货</div></div>
-  <div class="bottompersonal"><span class="bottombiao">会员中心</span><div class="bottomxuanxiang1">我的订单<br>我的奖励<br>我的积分<br>我的评价<br>我的信息<br>我的储钱罐旅行计划</span><br>找朋友</div> </div>
-  <div class="bottombook"><span class="bottombiao">旅游志</span><div class="bottomxuanxiang">旅游随感<br>写给未来的信</div></div>
- <div class="weishenme"><span class="bottombiao">主题旅游</span><div class="bottomxuanxiang">城市之间<br>学子游<br>年休假<br>美食游</div></div>
-  <div class="bottomaboutus"><span class="bottombiao">关于游记</span><div class="bottomxuanxiang">关于我们<br>联系我们<br>一起合作<br>用户协议<br>诚聘英才</div></div>
-
-
-<img src="__IMG__/steptu.png" class="steptu">
-<img src="__IMG__/banquan.png" class="banquan">
-<img src="__IMG__/renzhengwang.png" class="renzhengwang">
-<img src="__IMG__/kexin.png" class="kexin">
-<img src="__IMG__/chengxin.png" class="chengxin">
+ <div>
+        <div class="bottom"></div>
+        <div class="bottomsm">
+            <span class="bottombiao">旅游超市</span>
+            <div class="bottomxuanxiang">
+            <a href="<?php echo U('Index/travelStore/smsousuojieguo');?>">住</a><br>
+            <a href="<?php echo U('Index/travelStore/travelStore');?>">吃货</a>
+            </div>
+        </div>
+        <div class="bottompersonal">
+            <span class="bottombiao">会员中心</span>
+            <div class="bottomxuanxiang1">
+            <a href="<?php echo U('Index/vipCenter/myOrders');?>"> 我的订单</a><br>
+            <a href="<?php echo U('Index/vipCenter/myGrades');?>">我的积分</a> <br>
+            <a href="<?php echo U('Index/vipCenter/myEvaluations');?>"> 我的评价</a><br>
+            <a href="<?php echo U('Index/vipCenter/myInformation');?>">我的信息</a> <br>
+            <a href="<?php echo U('Index/vipCenter/myMoneyPot');?>">我的储钱罐旅行计划</a><br>
+            </div>
+        </div>
+        <div class="bottombook">
+            <span class="bottombiao">旅游志</span>
+            <div class="bottomxuanxiang">
+            <a href="<?php echo U('Index/travelBook/travelBook');?>">旅游随感</a> <br>
+            <a href="<?php echo U('Index/travelBook/letterList');?>"> 写给未来的信</a></div>
+         </div>
+         <div class="weishenme">
+             <span class="bottombiao">主题旅游</span>
+            <div class="bottomxuanxiang"><a href="/travel/steptu/index.php/travelTheme/travelTheme/class/学子游">城市之间</a><br>
+            <a href="<?php echo U(Index/travelTheme/travelTheme,'class=学子游','');?>"> 学子游</a><br>
+            <a href="<?php echo U(Index/travelTheme/travelTheme,'class=年休假','');?>">年休假</a><br>
+            <a href="<?php echo U(Index/travelTheme/travelTheme,'class=美食街','');?>">美食游</a></div></div>
+        <div class="bottomaboutus"><span class="bottombiao">关于游记</span><div class="bottomxuanxiang">
+            <a href="<?php echo U('Index/index/aboutUs');?>">关于我们</a><br>
+            <a href="<?php echo U('Index/index/aboutUs');?>">联系我们</a><br>
+            <a href="<?php echo U('Index/index/aboutUs');?>">一起合作</a><br>
+            <a href="<?php echo U('Index/index/aboutUs');?>">用户协议</a><br>
+            <a href="<?php echo U('Index/index/aboutUs');?>">诚聘英才</a></div>
+        </div>
+    </div>
+    <img src="../Public/images/steptu.png" class="steptu">
+    <img src="../Public/images/banquan.png" class="banquan">
+    <img src="../Public/images/renzhengwang.png" class="renzhengwang">
+    <img src="../Public/images/kexin.png" class="kexin">
+    <img src="../Public/images/chengxin.png" class="chengxin">
 
 
 
@@ -184,7 +245,8 @@ background-repeat: no-repeat;
 </div>
 
 <script src="__JS__/index.js" type="text/javascript"></script>
-<div class="theme-popover">
+<div  id="asdfq">
+<div class="theme-popover" id="theme-popover">
      <div class="theme-poptit">
           <a href="javascript:;" title="关闭" class="close">×</a>
           <h3>旅行是一种生活</h3>
@@ -192,15 +254,46 @@ background-repeat: no-repeat;
      <div class="theme-popbod dform">
            <form class="theme-signin" name="loginform" action="<?php echo U('Index/loginVerify/loginVerify');?>" method="post">
                 <ol>
-                     <li><h4>请登录</h4></li>
-                     <li><strong>用户名：</strong><input class="ipt" type="text" name="log" value="jq22" size="20" /></li>
-                     <li><strong>密码：</strong><input class="ipt" type="password" name="pwd" value="***" size="20" /></li>
-                     <li><input class="btn btn-primary" type="submit" name="submit" value=" 登 录 " /></li>
+                     <li ><h4>请登录</h4></li>
+                     <li><strong>用户名：</strong><input class="ipt" id="name" type="text" name="log" value="jq22" size="20" /></li>
+                     <li><strong>密码：</strong><input class="ipt" id="psw" type="password" name="pwd" value="***" size="20" /></li>
+                     <li><input class="btn btn-primary" name="submit" value=" 登 录 " id="dlanniu" /></li>
                 </ol>
            </form>
      </div>
 </div>
-<div class="theme-popover-mask"></div>
-  
+<div class="theme-popover-mask" id="theme-popover-mask"></div>
+  </div>
+  <div class="dengluchenggong" id="dengluchenggong"></div>
 </body>
+<script type="text/javascript">
+
+$("#dlanniu").click(function(){
+   // console.log($data['code']);
+   // alert("用户名/密码 错误！");
+   var url = '<?php echo U('Index/loginVerify/loginVerify');?>';
+   $.post(url,{log:$("#name").val(),pwd:$("#psw").val()},function(data){
+       console.log(data.code);
+      // alert(data['address'][2]);
+      var shishi=$("#name").val();
+      console.log(shishi);
+      if (data.code==1) {
+      alert("登陆成功");
+      asdfq.style.display="none";
+      loganniu.style.display="none";
+      reanniu.style.display="none";
+      document.getElementById("dengluchenggong").innerHTML="欢迎您，"+shishi;
+      // theme-popover.style.display=none;
+      //  theme-popover-mask.style.display="none";
+      }
+      else
+      {
+        alert("用户名/密码 错误！")
+      };
+    }
+      )
+}
+)
+
+</script>
 </html>

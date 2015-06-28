@@ -46,14 +46,14 @@ background-color: #d2dffe;
 -->1
 </STYLE>
 <div class="quanbu">
-
-	<img src="../Public/images/travelsm.png" class="travelsm">
-   <img src="../Public/images/personal.png"class="personal">
-   <img src="../Public/images/travel.png" class="travel" >
-   <img src="../Public/images/makeplan.png" class="makeplan">
-   <img src="../Public/images/index.png"class="index">
-   <img src="../Public/images/yuan.png"class="yuan">
-   <img src="../Public/images/travelbook.png"class="travelbook">
+<a href="<?php echo U('Index/travelStore/smsousuojieguo');?>"><img src="../Public/images/travelstore/zhu.png" class="zhu"></a>
+<a href="<?php echo U('Index/travelStore/travelStore');?>"><img src="../Public/images/travelstore/chi.png" class="chi" onclick="showchi()"></a>
+	<a href="<?php echo U('Index/travelStore/travelStore');?>"><img src="__IMG__/travelsm.png" class="travelsm"></a>
+        <a href="<?php echo U('Index/vipCenter/myInformation');?>"><img src="__IMG__/personal.png" class="personal"></a>
+        <a href="<?php echo U('Index/travelTheme/travelTheme');?>"> <img src="__IMG__/travel.png" class="travel" ></a>
+        <a href="<?php echo U('Index/makePlan/makePlan');?>"> <img src="__IMG__/makeplan.png" class="makeplan"></a>
+        <a href="<?php echo U('Index/index/index');?>"><img src="__IMG__/index.png" class="index"></a>
+        <a href="<?php echo U('Index/travelBook/travelBook');?>"><img src="__IMG__/travelbook.png" class="travelbook"></a>
 <img src="../Public/images/xuanchuan.png"class="xuanchuan">
 
 <a href="javascript:;"class=" btn-large theme-login" style=""><img src="../Public/images/login.png"   class="login"></a>
@@ -86,10 +86,10 @@ background-color: #d2dffe;
 
           <div style="position:absolute;top:107px;left:10px;font-size:13px;color:#AAAAAA;">位置</div>
           <div  id="buxian2" class="buxian22" onclick="showbuxian2()">不限</div>
-                <div style="position:absolute;top:107px;left:125px;" onclick="showshangyequ()">商业区<img src="../Public/images/travelstore/xiajiantou.png" style="position:relative;top:-2px;"id="shangyequtu" ></div>
-                <div style="position:absolute;top:107px;left:195px;" onclick="showjichang()">机场/火车站<img src="../Public/images/travelstore/xiajiantou.png" style="position:relative;top:-2px;"id="jichangtu"></div>
-                <div style="position:absolute;top:107px;left:295px;" onclick="showxingzhengqu()">行政区/下辖市县<img src="../Public/images/travelstore/xiajiantou.png"style="position:relative;top:-2px;" id="xingzhengqutu"></div>
-                 <div style="position:absolute;top:107px;left:425px;"onclick="showjingdian()">景点<img src="../Public/images/travelstore/xiajiantou.png" style="position:relative;top:-2px;"id="jingdiantu"></div>
+                <div style="position:absolute;top:107px;left:125px;cursor: pointer;" onclick="showshangyequ()">商业区<img src="../Public/images/travelstore/xiajiantou.png" style="position:relative;top:-2px;"id="shangyequtu" ></div>
+                <div style="position:absolute;top:107px;left:195px;cursor: pointer;" onclick="showjichang()">机场/火车站<img src="../Public/images/travelstore/xiajiantou.png" style="position:relative;top:-2px;"id="jichangtu"></div>
+                <div style="position:absolute;top:107px;left:295px;cursor: pointer;" onclick="showxingzhengqu()">行政区/下辖市县<img src="../Public/images/travelstore/xiajiantou.png"style="position:relative;top:-2px;" id="xingzhengqutu"></div>
+                 <div style="position:absolute;top:107px;left:425px;cursor: pointer;"onclick="showjingdian()">景点<img src="../Public/images/travelstore/xiajiantou.png" style="position:relative;top:-2px;"id="jingdiantu"></div>
 
 
 
@@ -115,7 +115,7 @@ background-color: #d2dffe;
 				<?php if(is_array($content)): foreach($content as $key=>$v): ?><div class="jiudianceng">
              <img src="../Public/images/travelstore/fengexian2.png">
               <div  class="jiudiancengshu">1</div>
-            <a href="<?php echo U('Index/travelStore/jiudian','','');?>/id/<?php echo ($v["id"]); ?>" > <span class="jiudianming"><?php echo ($v["hotelName"]); ?></span></a>
+            <a href="<?php echo U('Index/travelStore/jiudian','','');?>/id/<?php echo ($v["id"]); ?>" target="_blank" > <span class="jiudianming"><?php echo ($v["hotelName"]); ?></span></a>
               <div class="jiudianjiage">￥<?php echo ($v["price"]); ?>&nbsp<span class="jiudianjiageqi">起</span></div>
               <img src="../Public/images/travelstore/ditubiaozhi.png" class="ditubiaozhi" name="成都市一环路东一段">
               <div class="jiudiancengdizhi">地址：<?php echo ($v["area"]); ?></div>
@@ -186,20 +186,32 @@ background-color: #d2dffe;
 
 <div class="bottom">
 <div class="bottomsm">
-  <span class="bottombiao">旅游超市</span><div class="bottomxuanxiang">住<br>吃货</div>
+  <span class="bottombiao">旅游超市</span><div class="bottomxuanxiang"><a href="<?php echo U('Index/travelStore/smsousuojieguo');?>">住</a><br>
+            <a href="<?php echo U('Index/travelStore/travelStore');?>">吃货</a></div>
 </div>
 <div class="bottomsm">
-  <span class="bottombiao">会员中心</span><div class="bottomxuanxiang1">我的订单<br>我的奖励<br>我的积分<br>我的评价<br>我的信息<br>我的储钱罐旅行计划</span><br>找朋友</div>
+  <span class="bottombiao">会员中心</span><div class="bottomxuanxiang1"><a href="<?php echo U('Index/vipCenter/myOrders');?>"> 我的订单</a><br>
+            <a href="<?php echo U('Index/vipCenter/myGrades');?>">我的积分</a> <br>
+            <a href="<?php echo U('Index/vipCenter/myEvaluations');?>"> 我的评价</a><br>
+            <a href="<?php echo U('Index/vipCenter/myInformation');?>">我的信息</a> <br>
+            <a href="<?php echo U('Index/vipCenter/myMoneyPot');?>">我的储钱罐旅行计划</a><br></div>
 </div>
 <div class="bottomsm">
-  <span class="bottombiao">旅游志</span><div class="bottomxuanxiang">旅游随感<br>写给未来的信</div>
+  <span class="bottombiao">旅游志</span><div class="bottomxuanxiang"> <a href="<?php echo U('Index/travelBook/travelBook');?>">旅游随感</a> <br>
+            <a href="<?php echo U('Index/travelBook/letterList');?>"> 写给未来的信</a></div>
 </div>
 <div class="bottomsm">
-  <span class="bottombiao">主题旅游</span><div class="bottomxuanxiang">城市之间<br>学子游<br>年休假<br>美食游</div>
+  <span class="bottombiao">主题旅游</span><div class="bottomxuanxiang"> <a href="<?php echo U(Index/travelTheme/travelTheme,'class=学子游','');?>"> 学子游</a><br>
+            <a href="<?php echo U(Index/travelTheme/travelTheme,'class=年休假','');?>">年休假</a><br>
+            <a href="<?php echo U(Index/travelTheme/travelTheme,'class=美食街','');?>">美食游</a></div>
 </div>
 
 <div class="bottomsm">
-  <span class="bottombiao">关于游记</span><div class="bottomxuanxiang">关于我们<br>联系我们<br>一起合作<br>用户协议<br>诚聘英才</div>
+  <span class="bottombiao">关于游记</span><div class="bottomxuanxiang"> <a href="<?php echo U('Index/index/aboutUs');?>">关于我们</a><br>
+            <a href="<?php echo U('Index/index/aboutUs');?>">联系我们</a><br>
+            <a href="<?php echo U('Index/index/aboutUs');?>">一起合作</a><br>
+            <a href="<?php echo U('Index/index/aboutUs');?>">用户协议</a><br>
+            <a href="<?php echo U('Index/index/aboutUs');?>">诚聘英才</a></div>
 </div>
 
 <img src="../Public/images/package/steptu.png" class="steptu">
@@ -363,16 +375,68 @@ var weizhishangchuan = "不限";
   });
 
   $("#zhusousuomudidi").blur(function(){
-     $.post("http://127.0.0.1/steptu/index.php/travelStore/hello",function(data)
-    {
-      // alert( $("#zhusousuomudidi").val())
-      // alert(data['address'][2]);
-      document.getElementById("xingzhengqu").innerHTML=data['address'][2];
+
+    var url = '<?php echo U('Index/travelStore/living');?>';
+     $.post(url,{data:$("#zhusousuomudidi").val()},function(data){
+      // console.log(data.shangyequ.length);
+      // alert(data.jichang[1].station);
+      var i = 1;
+      var tianjia="";
+        console.log(data.jichang.length);
+
+      for (;i<=(data.shangyequ.length); i++) {
+        tianjia+="<span class='weizhiziti'>"+data.shangyequ[i-1].business+"</span>"
+      };
+       i=1;
+       console.log(tianjia);
+       document.getElementById("shangyequ").innerHTML=tianjia;
+       tianjia="";
+       // console.log(tianjia);
+
+     for (;i<=(data.jichang.length); i++) {
+        tianjia+="<span class='weizhiziti'>"+data.jichang[i-1].station+"</span>"
+      };
+      i=1;
+      // console.log(tianjia);
+       document.getElementById("jichang").innerHTML=tianjia;
+       tianjia=""
+        
+
+        for (;i<=(data.xingzhengqu.length); i++) {
+        tianjia+="<span class='weizhiziti'>"+data.xingzhengqu[i-1].xian+"</span>"
+      };
+      i=1;
+       document.getElementById("xingzhengqu").innerHTML=tianjia;
+       tianjia=""
+        for (;i<=(data.jingdian.length); i++) {
+        tianjia+="<span class='weizhiziti'>"+data.jingdian[i-1].jingdian+"</span>"
+      };
+      i=1;
+       document.getElementById("jingdian").innerHTML=tianjia;
+       tianjia=""
+
+
+     $(".weizhiziti").click(function(){
+    buxian2.style.color="black"
+    $(".weizhiziti").removeClass("weizhiziti2");
+
+    $(this).addClass("weizhiziti2");
+    weizhishangchuan=$(this).html();
+     $("#yincang").val(weizhishangchuan);
+      // alert($("#yincang").val());
+
+  });
+
+
+
+
+
     }
       )
 
    }
   )
+ 
 
   // 百度地图API功能
   var zidingdizhi = "北京大学";

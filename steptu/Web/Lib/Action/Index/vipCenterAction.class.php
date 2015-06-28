@@ -8,6 +8,10 @@
 
 	 	public function handUploadImage()
 	 	{
+	 		if(cookie("userid") == ''){
+	 			echo "alert('请先登录')";
+	 			redirect(U('Index/index/index','',''));	
+	 		}
 
 	 		import('ORG.Net.UploadFile');
 	 		$file = new UploadFile();
@@ -60,6 +64,10 @@
 	 	//处理我的信息显示页面
 
 	 	public function myInformation(){
+	 		if(cookie("userid") == ''){
+	 			echo "alert('请先登录')";
+	 			redirect(U('Index/index/index','',''));	
+	 		}
 	 		$condition['id'] = 1; //最后用cookie得到
 	 		$this->user = M('usertable')->where($condition)->find();
 	 		$this->display();
@@ -68,6 +76,10 @@
 
 		//保存用户完善的信息
 	 	public function handUserInfo(){
+	 		if(cookie("userid") == ''){
+	 			echo "alert('请先登录')";
+	 			redirect(U('Index/index/index','',''));	
+	 		}
 	 		$user = M('usertable');
 
 
@@ -92,6 +104,10 @@
 	 	}
 
 	 	public function myOrders(){  //展示所有的评论
+	 		if(cookie("userid") == ''){
+	 			echo "alert('请先登录')";
+	 			redirect(U('Index/index/index','',''));	
+	 		}
 	 		$data = M('order');
 	 		import('ORG.Util.Page');
 	 		//where 中的条件为session or cookie得到的
@@ -108,6 +124,10 @@
 	 	}
 
 	 	public function myEvaluations(){
+	 		if(cookie("userid") == ''){
+	 			echo "alert('请先登录')";
+	 			redirect(U('Index/index/index','',''));	
+	 		}
 	 		$user['id'] = 1;
 	 		var_dump(I("class"));
 	 		$this->class = I("class");
@@ -133,7 +153,10 @@
 	 	// 保存订单评论
 	 	public function orderComment(){  
 
-
+	 		if(cookie("userid") == ''){
+	 			echo "alert('请先登录')";
+	 			redirect(U('Index/index/index','',''));	
+	 		}
 	 		$orderComment = M('comment');
 	 		$data['travelId'] = I('travelId');
 	 		$data['userId'] = 1;
@@ -165,6 +188,10 @@
 
 	 	//写信
 	 	public function DoWriteLetter(){
+	 		if(cookie("userid") == ''){
+	 			echo "alert('请先登录')";
+	 			redirect(U('Index/index/index','',''));	
+	 		}
 	 		import('ORG.Net.UploadFile');
 	 		$file = new UploadFile();
 	 		$file->maxSize = 3333333333333;
@@ -188,7 +215,10 @@
 	 	
 
 	 	function myGrades(){
-
+			if(cookie("userid") == ''){
+	 			echo "alert('请先登录')";
+	 			redirect(U('Index/index/index','',''));	
+	 		}
 	 		$table = M('score');
 	 		$cDate['time'] = array('ELT',date('Y-m-d'));
 	 		$table->where($cDate)->delete();
@@ -202,7 +232,10 @@
 	 	}
 
 	 	function Hello(){
-	 		var_dump(APP_PATH);
+	 		if(cookie("userid") == ''){
+	 			echo "alert('请先登录')";
+	 			redirect(U('Index/index/index','',''));	
+	 		}
 	 		$score = M('score');
 	 				$Sc['userid'] = 1; //
 	 				$Sc['way'] = 1;
