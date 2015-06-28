@@ -2,50 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <script src="../Public/js/jquery-easyui-1.4.2/jquery.min.js"></script>
     <link rel="stylesheet" href="../Public/css/index.css" media="all" type="text/css">
     <title>套餐预定</title>
-    
+    <script src="../Public/js/jquery-easyui-1.4.2/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../Public/js/jquery-easyui-1.4.2/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="../Public/js/jquery-easyui-1.4.2/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="../Public/js/jquery-easyui-1.4.2/demo/demo.css">
     <link rel="stylesheet" href="../Public/css/css.css" media="all">
     <link href="../Public/css/packageOrder.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript">
-    $(function(){
-        $("#submit").click(function(){
-           if($("#adult").val() == '0'&& $("#child").val() == '0'){
-                alert("请填写旅游人数");
-                return false;
-           }
-        });
-        $("#phone").blur(function(){ //填写电话号码
-            var reg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
-            var phone = $("#phone").val();
-            if(reg.test(phone)){
-               
-            }else{
-                alert("电话号码错误");
-            }
-            
-        });
-        $("#adult,#child").change(function(){
-            
-            if($("#adult").val() < 0){
-                $("#adult").val(0);
-            }
-            if($("#child").val() < 0){
-                $("#child").val(0);
-            }
-
-
-            $.post("{:U('Index/package/countMoney','','')}",{adult:$("#adult").val(),child:$("#child").val(),id:1},function(data){
-                $('.money').html("￥" + data);
-                $("#total").val(data);
-            })
-        });
-    })
-    </script>
 </head>
 <body>
 <div class="quanbu">
@@ -73,30 +37,30 @@
             <img src="../Public/images/package/second.png" class="second">
             <img src="../Public/images/package/third.png" class="third">
             <img src="../Public/images/package/fourth.png" class="fourth">
-            <form class="orderContainer" method="post" action="{:U('Index/package/order_2','','')}">
+            <form class="orderContainer">
                 <div class="travelInformation">
                     <span>出游信息</span>
-                    <input type="hidden" value="0" name="money" id="total">
-                    <input type="hidden" value="{$data.id}" name="id">
-                    <input type="hidden" value="{$data.name}" name="title">
                     <table class="table">
                         <tr>
                             <td>产品名称：</td>
-                            <td>{$data.name}</td>
+                            <td>xxxxxxx</td>
                         </tr>
                         <tr>
                             <td>人数：</td>
-                            <td class="enter"><label>成人<input type="number" value="0" required id="adult" name="adult">儿童<input name="child" type="number" required value="0" id="child"></label></td>
+                            <td class="enter"><label>成人<input type="number" required>儿童<input type="number" required></label></td>
                         </tr>
                         <tr>
                             <td>联系人：</td>
-                            <td><label><input name="name" type="text" required style="width: 200px" id="name"></label></td>
+                            <td><label><input type="text" required style="width: 200px"></label></td>
                         </tr>
                         <tr>
                             <td>手机：</td>
-                            <td><label><input type="text" name="phone" required style="width: 200px" id="phone"></label></td>
+                            <td><label><input type="tel" required style="width: 200px"></label></td>
                         </tr>
-                        
+                        <tr>
+                            <td>邮箱：</td>
+                            <td><label><input type="email" required style="width: 200px"></label></td>
+                        </tr>
                     </table>
                 </div>
                 <div class="shouldKnow">
@@ -126,19 +90,49 @@
                 <div class="totalSpend">
                     金额： <span class="money">￥300</span>
                 </div>
-                <input type="submit" class="confirmButton" value="下一步" id="submit">
-             <!--   <button class="confirmButton" id="submit" type="submit">下一步</button> -->
+               <button class="confirmButton">下一步</button>
             </form>
         </div>
     </div>
 
     <div>
         <div class="bottom"></div>
-        <div class="bottomsm"><span class="bottombiao">旅游超市</span><div class="bottomxuanxiang">住<br>吃货</div></div>
-        <div class="bottompersonal"><span class="bottombiao">会员中心</span><div class="bottomxuanxiang1">我的订单<br>我的奖励<br>我的积分<br>我的评价<br>我的信息<br>我的储钱罐旅行计划</span><br>找朋友</div> </div>
-        <div class="bottombook"><span class="bottombiao">旅游志</span><div class="bottomxuanxiang">旅游随感<br>写给未来的信</div></div>
-        <div class="weishenme"><span class="bottombiao">主题旅游</span><div class="bottomxuanxiang">城市之间<br>学子游<br>年休假<br>美食游</div></div>
-        <div class="bottomaboutus"><span class="bottombiao">关于游记</span><div class="bottomxuanxiang">关于我们<br>联系我们<br>一起合作<br>用户协议<br>诚聘英才</div></div>
+        <div class="bottomsm">
+            <span class="bottombiao">旅游超市</span>
+            <div class="bottomxuanxiang">
+                <a href="{:U('Index/travelStore/smsousuojieguo')}">住</a><br>
+                <a href="{:U('Index/travelStore/travelStore')}">吃货</a>
+            </div>
+        </div>
+        <div class="bottompersonal">
+            <span class="bottombiao">会员中心</span>
+            <div class="bottomxuanxiang1">
+                <a href="{:U('Index/vipCenter/myOrders')}"> 我的订单</a><br>
+                <a href="{:U('Index/vipCenter/myGrades')}">我的积分</a> <br>
+                <a href="{:U('Index/vipCenter/myEvaluations')}"> 我的评价</a><br>
+                <a href="{:U('Index/vipCenter/myInformation')}">我的信息</a> <br>
+                <a href="{:U('Index/vipCenter/myMoneyPot')}">我的储钱罐旅行计划</a><br>
+            </div>
+        </div>
+        <div class="bottombook">
+            <span class="bottombiao">旅游志</span>
+            <div class="bottomxuanxiang">
+                <a href="{:U('Index/travelBook/travelBook')}">旅游随感</a> <br>
+                <a href="{:U('Index/travelBook/letterList')}"> 写给未来的信</a></div>
+        </div>
+        <div class="weishenme">
+            <span class="bottombiao">主题旅游</span>
+            <div class="bottomxuanxiang"><a href="{:U('Index/travelTheme/travelTheme')}">城市之间</a><br>
+                <a href="{:U('Index/travelTheme/travelTheme')}"> 学子游</a><br>
+                <a href="{:U('Index/travelTheme/travelTheme')}">年休假</a><br>
+                <a href="{:U('Index/travelTheme/travelTheme')}">美食游</a></div></div>
+        <div class="bottomaboutus"><span class="bottombiao">关于游记</span><div class="bottomxuanxiang">
+            <a href="{:U('Index/index/aboutUs')}">关于我们</a><br>
+            <a href="{:U('Index/index/aboutUs')}">联系我们</a><br>
+            <a href="{:U('Index/index/aboutUs')}">一起合作</a><br>
+            <a href="{:U('Index/index/aboutUs')}">用户协议</a><br>
+            <a href="{:U('Index/index/aboutUs')}">诚聘英才</a></div>
+        </div>
     </div>
     <img src="../Public/images/steptu.png" class="steptu">
     <img src="../Public/images/banquan.png" class="banquan">
