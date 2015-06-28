@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../Public/css/index.css" media="all" type="text/css">
     <title>旅游随感</title>
+    <script  src="/travel/steptu/Web/Tpl/ueditor/ueditor.config.js"></script>
+    <script src="/travel/steptu/Web/Tpl/ueditor/ueditor.all.min.js"></script>
+
     <script src="../Public/js/jquery-easyui-1.4.2/jquery.min.js"></script>
+   
     <script src="../Public/js/register.js"></script>
     <script src="../Public/js/traveBook.js"></script>
     <link rel="stylesheet" type="text/css" href="../Public/js/jquery-easyui-1.4.2/themes/default/easyui.css">
@@ -22,10 +26,10 @@
 
             $('#sub').click(function() {
                 
-                if ($('#text').val()) {
+                if (UE.getEditor('text').getContent()) {
                     $.post(
                         '{:U("Index/travelBook/fellingComment")}',
-                        {id:<?php echo $data['id']?>,content:$('#text').val()},
+                        {id:<?php echo $data['id']?>,content:UE.getEditor('text').getContent()},
                         function(data){
                             if (data['msg'] == 'sussess') {
                                 window.location.href="{:U('Index/travelBook/felling','','')}/id/{$data.id}";
@@ -62,6 +66,8 @@
     <div class="mainbox"></div>
 
     <div class="container">
+
+       
         <img src="../Public/images/travelBook/headtitle_felling.png"><br><br/>
         <img src="../Public/images/travelBook/title.png"><br/>
         <div id="mainboxrealFelling">
@@ -97,6 +103,17 @@
             <span><b>发表评论</b></span><br/>
             <img src="../Public/images/travelBook/headimg.png" class="imgeye">
             <textarea id='text'></textarea>
+            <!-- 添加文本编辑器 -->
+            <script type="text/javascript">
+                window.UEDITOR_HOME_URL = '/travel/steptu/Web/Tpl/ueditor/';
+                window.UEDITOR_CONFIG.toolbars = [['undo', 'redo','|',
+                                                   'bold', 'italic',
+                                                    'emotion',
+                                                   ]];
+                window.UEDITOR_CONFIG.scaleEnabled  = true; 
+                window.UEDITOR_CONFIG.elementPathEnabled = false;
+                var ue = UE.getEditor('text',{initialFrameWidth:720,initialFrameHeight:90});
+        </script>
             <button class="btn btn-primary" style="margin-left: 50px" id='sub'>  提 交  </button><br/><br/>
             <span><b>网友评论</b></span><br/>
             <foreach name='list' item='v'>
@@ -106,7 +123,7 @@
                     <span id="dataBox_2">{$v.time}</span><br/><br/>
                     <div class="commentContent">
                         <p>
-                            {$v.content}
+                            {$v.content|htmlspecialchars_decode}
                         </p><br/>
                     </div>
                 </div>
@@ -130,7 +147,7 @@
     <img src="../Public/images/kexin.png" class="kexin_1">
     <img src="../Public/images/chengxin.png" class="chengxin_1">
     <div class="twoBtn">
-        <a style="top: 242px;left: 37%" href="{:U('Index/travelBook/index')}"> 旅 游 随 感 </a>
+        <a style="top: 242px;left: 37%" href="{:U('Index/travelBook/travelBook')}"> 旅 游 随 感 </a>
         <a style="top: 242px;left: 54%" href="{:U('Index/travelBook/letterList')}">写 给 未 来 的 信</a>
     </div>
 </div>

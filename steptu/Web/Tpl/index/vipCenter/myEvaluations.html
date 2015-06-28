@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../Public/css/index.css" media="all" type="text/css">
     <title>我的评价</title>
+    <script  src="/travel/steptu/Web/Tpl/ueditor/ueditor.config.js"></script>
+    <script src="/travel/steptu/Web/Tpl/ueditor/ueditor.all.min.js"></script
     <script src="../Public/js/jquery-easyui-1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="../Public/js/jquery.form.js"></script>
     <script src="../Public/js/jquery-easyui-1.4.2/jquery.easyui.min.js"></script>
@@ -55,7 +57,7 @@
                         </tr>
                         <foreach name='order' item='v'>
                             <tr>  <!-- 从这里开始循环，每增加一条评价，增加一个tr-->
-                                <td>{$v.content}</td>
+                                <td>{$v.content|htmlspecialchars_decode}</td>
                                 <td>{$v.level}</td>
                                 <td>{$v.time}</td>
                             </tr> <!-- 到这里循环结束-->
@@ -65,6 +67,7 @@
                 </div>
             <if condition="$juge eq 1">
                 <form class="operations" action="{:U('Index/vipCenter/orderComment')}" method="post" enctype="multipart/form-data">
+                    <input type="hidden" value="{$class}" name="class"> 
                     <div class="giveAComment">
                         评分：
                         <label><input type="checkbox" name="level" value="满意" checked='checked' onclick="chooseOne(this)">满意</label>
@@ -82,18 +85,20 @@
                         </ol><br/>
                     </div>
                     <input type='hidden' value="{$travelId}" name='travelId'>
-                    <label><textarea class="textarea" name="content"></textarea><br/></label>
-                    <input id="imgfile" type="file" accept="image/gif, image/png, image/jpeg" name="image" />
+                    <label><textarea class="textarea" name="content" id="content"></textarea><br/></label>
+                    <script type="text/javascript">
+                            window.UEDITOR_HOME_URL = '/travel/steptu/Web/Tpl/ueditor/';
+                            window.UEDITOR_CONFIG.toolbars = [['undo', 'redo','|',
+                                                               'bold', 'italic',
+                                                                'emotion','date', 'time'
+                                                               ]];
+                            window.UEDITOR_CONFIG.scaleEnabled  = true;
+                            window.UEDITOR_CONFIG.elementPathEnabled = false;
+                            var ue = UE.getEditor('content',{initialFrameWidth:550,initialFrameHeight:80});
+                     </script>
+                <!--     <input id="imgfile" type="file" accept="image/gif, image/png, image/jpeg" name="image" /> -->
                     <div class="giveAComment">
-                        <!-- <span>验证码：</span><label><input class="easyui-textbox" style="height: 20px;width: 50px"></label>
-                        <img src="{:U('Index/loginVerify/identify')}" id="code"/><a href="javascript:void(change_code(this));">看不清</a> -->
-                         <script>
-                        //     var verifyURL = "{:U('Index/loginVerify/identify','','')}";
-                        //     function change_code(){
-                        //         document.getElementById("code").setAttribute("src",verifyURL +'/' + Math.random());
-                        //         return false;
-                        //     }
-                         </script>
+                
                     </div>
                     <button class="button" type="submit">上传</button>
                     <button class="button_1" type="reset">取消</button>
